@@ -77,6 +77,7 @@ if ($resultado->num_rows > 0) {
                 <input type="submit" value="Añadir">
             </div>
         </form>
+        <p><a href="añadir.html">Volver</a></p>
     </div>
 </body>
 </html>
