@@ -1,0 +1,111 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+    background-color:rgb(30, 157, 161);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.logo{
+    max-width:200px;
+}
+
+.container{
+    margin-top:80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formulario{
+    background-color: rgb(193, 221, 224);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.form-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mal, .bien{
+    margin-top:80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.malt{
+    background-color: yellow;
+    border-radius: 5px;
+    padding:10px;
+}
+
+.malb{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bient{
+    background-color: rgb(9, 206, 9);
+    margin-bottom:30px;
+    border-radius: 5px;
+    padding:10px;
+}
+
+a{
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(211, 206, 206); /* Color de fondo del botón */
+    color: black; /* Color del texto del botón */
+    text-decoration: none; /* Elimina el subrayado */
+    border: none; /* Elimina el borde */
+    border-radius: 5px; /* Redondea las esquinas del botón */
+}
+
+.form-ve{
+    border-radius: 5px;
+    background-color:rgb(193, 221, 224) ;
+    display: grid;
+    grid-template-columns: 2fr 1fr 0.2fr;
+    padding:10px;
+}
+
+.marca{
+    margin:10px;
+}
+
+.th, .td {
+  border: 1px solid black; /* Añade bordes a las celdas */
+  padding: 8px; /* Añade espacio interno */
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+.th{
+    background-color:rgb(30, 157, 161);
+}
+
+.td{
+    background-color: white;
+}
+
+.btn-mod{
+    margin-top:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

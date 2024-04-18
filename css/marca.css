@@ -1,0 +1,92 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    height: 100%;
+    background-color: rgb(192, 188, 188);
+}
+
+img{
+    width: 120px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.boton{
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(134, 132, 132); /* Color de fondo del botón */
+    color: black; /* Color del texto del botón */
+    text-decoration: none; /* Elimina el subrayado */
+    border: none; /* Elimina el borde */
+    border-radius: 5px; /* Redondea las esquinas del botón */
+}
+
+footer {
+    bottom:0;
+    left:0;
+    width:100%;
+    background-color: rgb(30, 157, 161);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+
+.ico, .icopy{
+    max-width: 40px;
+}
+
+.rrss{
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+
+.ico{
+    max-width:40px;
+    margin-left: 20px;
+}
+.rrss-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rrss p{
+    margin-right: 1100px;
+}
+
+.copy{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    margin-left: 480px;
+}
+
+.icopy{
+    max-width: 20px;
+}
+
+.copy-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header{
+    background-color:rgb(30, 157, 161);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+}
+
+header img{
+    max-width: 300px;
+}

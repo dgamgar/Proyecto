@@ -1,0 +1,48 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+    background-color:rgb(30, 157, 161);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.opciones{
+    margin-top:50px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    max-width:200px;
+}
+
+a{
+    margin-left: 10px;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(185, 219, 212); /* Color de fondo del botón */
+    color: black; /* Color del texto del botón */
+    text-decoration: none; /* Elimina el subrayado */
+    border: none; /* Elimina el borde */
+    border-radius: 5px; /* Redondea las esquinas del botón */
+}
+
+.cese{
+    background-color: rgb(194, 187, 187);
+}

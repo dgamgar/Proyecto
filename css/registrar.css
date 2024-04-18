@@ -1,0 +1,162 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    height: 100%;
+    background-image: url("../img/registrar.jpg");
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+header{
+    background-color:rgb(30, 157, 161);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.logo{
+    max-width: 250px;
+}
+
+.formulario{
+    margin-top:50px;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    background-color: #cae6e7;
+}
+
+.form-item, .form-usu{
+    margin-right:40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+label{
+    grid-column: 1;
+}
+
+input{
+    grid-column: 2;
+}
+
+.p-inp1{
+    grid-column:1;
+}
+
+.p-inp2{
+    grid-column: 2;
+}
+
+.mal, .bien{
+    margin-top:80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.bi-ad{
+    background-color: rgb(9, 206, 9);
+    margin-bottom:30px;
+    border-radius: 5px;
+    padding:10px;
+}
+
+.bi-com{
+    background-color: rgb(9, 206, 9);
+    margin-bottom:30px;
+    border-radius: 5px;
+    padding:10px;
+}
+
+.malt{
+    background-color: yellow;
+    border-radius: 5px;
+    padding:10px;
+}
+
+.malb{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+a{
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(211, 206, 206); /* Color de fondo del botón */
+    color: black; /* Color del texto del botón */
+    text-decoration: none; /* Elimina el subrayado */
+    border: none; /* Elimina el borde */
+    border-radius: 5px; /* Redondea las esquinas del botón */
+}
+
+footer {
+    width:100%;
+    background-color: rgb(30, 157, 161);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 80px;
+    bottom: 0;
+    left:0;
+}
+
+
+.ico, .icopy{
+    max-width: 40px;
+}
+
+.rrss{
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+
+.ico{
+    max-width:40px;
+    margin-left: 20px;
+}
+.rrss-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rrss p{
+    margin-right: 1100px;
+}
+
+.copy{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    margin-left: 480px;
+}
+
+.icopy{
+    max-width: 20px;
+}
+
+.copy-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
