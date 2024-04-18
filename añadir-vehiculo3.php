@@ -69,7 +69,7 @@ session_start();
             // Ya existe el vehículo introducido
             ?>
             <div class="mal">
-                <h2 class="malt">El vehículo introducida ya existe, inténtelo de nuevo</h2>
+                <h2 class="malt">El vehículo introducido ya existe, inténtelo de nuevo</h2>
                 <p class="malb"><a href='añadir-vehiculo.php'>Volver</a></p>
             </div>
             <?php

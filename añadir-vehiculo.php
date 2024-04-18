@@ -33,7 +33,7 @@ if ($resultado->num_rows > 0) {
     <div class="container">
         <!-- Menú desplegable para escoger marca -->
         <form action="añadir-vehiculo2.php" method="post" class="form-ve">
-            <p>Escoja la marca a la que pertenecerá el nuevo modelo </p>
+            <p>Escoja la marca a la que pertenecerá el nuevo vehículo </p>
             <select name="marca" id="marca" class="marca">
                 <?php
                 // Recorro todo el array mostrando las marcas que hay almacenadas
