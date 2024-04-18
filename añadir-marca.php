@@ -23,6 +23,10 @@
                 <input type="text" name="marca" id="marca">
             </div>
             <br>
+            <div class="in">
+                <p>Recuerde que al añadir una marca, debe añadir una imagen(png) de esta en la carpeta img/ con el nombre de la marca tal cual lo ponga aquí.</p>
+                <p>La ruta debe quedar así: C:/xampp/htdocs/proyecto/img/nueva-marca.png</p>
+            </div>
             <div class="form-btn">
                 <input type="submit" value="Añadir">
             </div>
