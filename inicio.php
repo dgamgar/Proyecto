@@ -36,7 +36,7 @@
         </div>
     
         <div class="botones">
-            <p><a href="registrar.php">Registrarse</a><a href="login.php">Iniciar sesión</a></p>
+            <p><a href="registrar.html">Registrarse</a><a href="login.html">Iniciar sesión</a></p>
         </div>
         <footer>
             <div class="rrss">

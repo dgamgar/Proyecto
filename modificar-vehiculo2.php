@@ -64,7 +64,7 @@
             ?>
             <div class="mal">
                 <h2 class="malt">No existen vehículos de el modelo seleccionado, inténtelo de nuevo</h2>
-                <p class="malb"><a href="admin.php">Volver</a></p>
+                <p class="malb"><a href="admin.html">Volver</a></p>
             </div>
             <?php
         }

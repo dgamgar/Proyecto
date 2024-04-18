@@ -27,7 +27,7 @@
         ?>
         <div class="mal">
             <h2 class="malt">La marca introducida ya existe, inténtelo de nuevo</h2>
-            <p class="malb"><a href='añadir-marca.php'>Volver</a></p>
+            <p class="malb"><a href='añadir-marca.html'>Volver</a></p>
         </div>
         <?php
     } else {
@@ -38,7 +38,7 @@
         ?>
         <div class="bien">
             <h2 class="bient">Nueva marca añadida con éxito</h2>
-            <p class="bienb"><a href="admin.php">Inicio</a><a href="añadir-marca.php">Volver</a></p>
+            <p class="bienb"><a href="admin.html">Inicio</a><a href="añadir-marca.html">Volver</a></p>
         </div>
         <?php
     }

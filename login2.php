@@ -34,7 +34,7 @@ session_start();
             // Compruebo si es admin o no
             if($rol>0){
                 // ADMIN
-                header("Location:admin.php");
+                header("Location:admin.html");
             } else {
                 // NO admin
                 header("Location:marca.php");
@@ -43,7 +43,7 @@ session_start();
             // No existe
             ?>
             <h2>Los datos introducidos no corresponden con ningún cliente, inténtelo de nuevo.</h2>
-            <p><a href="login.php">Volver</a><a href="registrar.php">Registrarse</a></p>
+            <p><a href="login.html">Volver</a><a href="registrar.html">Registrarse</a></p>
             <footer>
                 <div class="rrss">
                     <div class="rrss-item">

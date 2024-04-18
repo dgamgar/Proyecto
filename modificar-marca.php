@@ -51,7 +51,7 @@ if ($resultado->num_rows > 0) {
                     ?>
             </tbody>
         </table>
-        <p><a href="admin.php">Inicio</a></p>
+        <p><a href="admin.html">Inicio</a></p>
     </div>
 </body>
 </html>

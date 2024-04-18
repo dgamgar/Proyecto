@@ -81,7 +81,7 @@ session_start();
             ?>
             <div class="bien">
                 <h2 class="bient">Vehículo añadido con éxito</h2>
-                <p class="bienb"><a href="admin.php">Inicio</a><a href="añadir-vehiculo.php">Volver</a></p>
+                <p class="bienb"><a href="admin.html">Inicio</a><a href="añadir-vehiculo.php">Volver</a></p>
             </div>
             <?php
         }

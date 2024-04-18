@@ -28,7 +28,7 @@ session_start();
    ?>
    <div class="bien">
        <h2 class="bient">Marca modificada con éxito</h2>
-       <p class="bienb"><a href="admin.php">Inicio</a><a href="modificar-marca.php">Volver</a></p>
+       <p class="bienb"><a href="admin.html">Inicio</a><a href="modificar-marca.php">Volver</a></p>
    </div>
 </body>
 </html>

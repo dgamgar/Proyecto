@@ -53,7 +53,7 @@ while($fila = $resultado->fetch_assoc()){
         ?>
         <div class="bien">
             <h2 class="bient">Modelo añadido con éxito</h2>
-            <p class="bienb"><a href="admin.php">Inicio</a><a href="añadir-modelo.php">Volver</a></p>
+            <p class="bienb"><a href="admin.html">Inicio</a><a href="añadir-modelo.php">Volver</a></p>
         </div>
         <?php
     }

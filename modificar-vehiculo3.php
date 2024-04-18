@@ -74,7 +74,7 @@ session_start();
         ?>
         <div class="bien">
             <h2 class="bient">Vehículo modificado con éxito</h2>
-            <p class="bienb"><a href="admin.php">Volver</a></p>
+            <p class="bienb"><a href="admin.html">Volver</a></p>
         </div>
         <?php
     }

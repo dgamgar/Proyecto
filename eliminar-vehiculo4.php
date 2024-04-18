@@ -26,7 +26,7 @@
         ?>
         <div class="bien">
             <h2 class="bient">Vehículo eliminado con exito</h2>
-            <p class="bienb"><a href="admin.php">Inicio</a><a href="eliminar-vehiculo.php">Volver</a></p>
+            <p class="bienb"><a href="admin.html">Inicio</a><a href="eliminar-vehiculo.php">Volver</a></p>
         </div>
         <?php
     } else {

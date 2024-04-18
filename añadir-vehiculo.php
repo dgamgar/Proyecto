@@ -46,7 +46,7 @@ if ($resultado->num_rows > 0) {
                 <input type="submit" value="Siguiente">
             </div>
         </form>
-        <p><a href="admin.php" class="btn-ve">Volver</a></p>
+        <p><a href="admin.html" class="btn-ve">Volver</a></p>
     </div>
 </body>
 </html>

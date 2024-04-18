@@ -58,7 +58,7 @@ session_start();
                                         echo "<td class='td'>$fila[paquete]</td>";
                                         echo "<td class='td'>$fila[precio]</td>";
                                         ?>
-                                        <td><a href="comprar.php">Comprar</a></td>
+                                        <td><a href="comprar.html">Comprar</a></td>
                                         <?php
                                         echo "</tr>";
                                     }

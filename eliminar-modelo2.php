@@ -65,7 +65,7 @@
                                 ?>
                             </tbody>
                 </table>
-                <p><a href="eliminar-modelo.php">Volver</a><a href="admin.php">Inicio</a></p>
+                <p><a href="eliminar-modelo.php">Volver</a><a href="admin.html">Inicio</a></p>
             </div>
             <?php
 

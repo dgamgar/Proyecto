@@ -41,7 +41,7 @@
             ?>
             <div class="bien">
                 <h2 class="bient">Modelo eliminado con éxito</h2>
-                <p class="bienb"><a href="admin.php">Inicio</a><a href="eliminar-modelo.php">Volver</a></p>
+                <p class="bienb"><a href="admin.html">Inicio</a><a href="eliminar-modelo.php">Volver</a></p>
             </div>
             <?php
         }

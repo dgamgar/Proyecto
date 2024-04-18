@@ -34,7 +34,7 @@ session_start();
         ?>
         <div class="mal">
             <h2 class="malt">Ya existe un usuario con el DNI introducido</h2>
-            <p class="malb"><a href="registrar.php">Volver</a><br><a href="login.php">Iniciar sesión</a></p>
+            <p class="malb"><a href="registrar.html">Volver</a><br><a href="login.html">Iniciar sesión</a></p>
         </div>
         <?php
     } else {
@@ -47,7 +47,7 @@ session_start();
             <div class="bien">
                 <br>
                 <h2 class="bi-ad">Usuario ADMIN agregado correctamente</h2>
-                <p><a href="login.php">Iniciar sesión</a></p>
+                <p><a href="login.html">Iniciar sesión</a></p>
             </div>
             <?php
         } else {
@@ -58,7 +58,7 @@ session_start();
             <div class="bien">
                 <br>
                 <h2 class="bi-com">Usuario COMPRADOR agregado correctamente</h2>
-                <p><a href="login.php">Iniciar sesión</a></p>
+                <p><a href="login.html">Iniciar sesión</a></p>
             </div>
             <?php
         }

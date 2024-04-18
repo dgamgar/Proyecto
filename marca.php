@@ -28,7 +28,7 @@ if ($resultado->num_rows > 0) {
 <body>
     <header>
         <h1>Escoja la marca que desee</h1>
-        <img src="img/logo2.png" alt="">
+        <img src="img/logo2.png">
     </header>
     <div class="container">
                 <div class="marcas">

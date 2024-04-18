@@ -51,7 +51,7 @@
                 ?>
             </tbody>
         </table>
-        <p><a href="admin.php">Volver</a></p>
+        <p><a href="admin.html">Volver</a></p>
     </div>
 </body>
 </html>

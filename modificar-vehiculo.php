@@ -55,12 +55,13 @@ if ($resultado->num_rows > 0) {
                         ?>
                 </tbody>
             </table>
-            <p><a href="modificar-vehiculo.php">Inicio</a></p>
+            <p><a href="admin.html">Inicio</a></p>
         </div>
         <?php
     } else {
         // Guardo el nombre de la marca en una variable
         $nmarca=$_GET['id'];
+
         // Establezco conexión con la BD
         require "conexion.php";
 
@@ -105,7 +106,7 @@ if ($resultado->num_rows > 0) {
                             ?>
                         </tbody>
             </table>
-            <p><a href="admin.php">Volver</a></p>
+            <p><a href="modificar-vehiculo.php">Volver</a></p>
         </div>
         <?php
         
