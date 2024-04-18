@@ -30,6 +30,13 @@ a{
     border-radius: 5px; /* Redondea las esquinas del botón */
 }
 
+.btn2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:10px;
+}
+
 footer {
     width:100%;
     background-color: rgb(30, 157, 161);
