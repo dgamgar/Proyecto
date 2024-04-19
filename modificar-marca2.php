@@ -37,7 +37,7 @@ session_start();
         <div class="container">
             <h2>Introduzca el nuevo nombre de la marca</h2>
             <!-- Formulario para pidiendo la modificación de la marca -->
-            <form action="modificar-marca3.php" method="post" class="formulario">
+            <form action="modificar-marca2.php" method="post" class="formulario">
                 <div>
                     <label for="marca1">Nuevo nombre: </label>
                     <input type="text" name="marca1" id="marca1">
@@ -50,7 +50,22 @@ session_start();
         </div>
         <?php
     } else {
-        echo "No se ha traído el nombre de la marca";
+        // Me traigo el nuevo nombre y el Id de la marca
+        $marca=$_POST["marca1"];
+        $id=$_SESSION['marca_mod'];
+        
+        // Establezco conexión con la BD
+        require "conexion.php";
+        
+        // Sentencia para modificar el nombre en la tabla
+        $sql="UPDATE marca SET nombre_marca = '$marca' WHERE ID_marca='$id'";
+        $resultado=$mysqli->query($sql);
+        ?>
+        <div class="bien">
+            <h2 class="bient">Marca modificada con éxito</h2>
+            <p class="bienb"><a href="admin.html">Inicio</a><a href="modificar-marca.php">Volver</a></p>
+        </div>
+        <?php
     }
     ?>
 </body>
