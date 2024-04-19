@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,59 +15,72 @@
         <img src="img/logo2.png" class="logo">
     </header>
     <?php
-    // Compruebo si se ha traído el nombre de la marca del modelo
-    if(isset($_GET['id'])){
-        // Sí lo ha traído
-        $nmarca=$_GET['id'];
-        // Establezco conexión con la BD
-        require "conexion.php";
+    // Establezco conexión con la BD
+    require "conexion.php";
 
-        // Saco el ID de la marca para mostrar los modelos de esta
-        $sql="SELECT ID_marca FROM marca WHERE nombre_marca='$nmarca'";
+    if(isset($_GET['id'])){
+        // Guardo el ID en una variable y en una sesión
+        $idmod=$_GET['id'];
+        $_SESSION['idmod']=$idmod;
+        // Saco los datos del modelo
+        $sql="SELECT * FROM modelo WHERE ID_modelo='$idmod'";
         $resultado=$mysqli->query($sql);
 
-        while($fila=$resultado->fetch_assoc()){
-            $id=$fila['ID_marca'];
+        // Guardo los datos del modelo en variables
+        while($fila = $resultado->fetch_assoc()){
+            $nmodelo=$fila["nombre_modelo"];
+            $npuertas=$fila["num_puertas"];
+            $comb=$fila["combustible"];
+            $cv=$fila["cv"];
         }
 
-        // Saco los datos de los modelos de la marca escogida
-        $sql1="SELECT * FROM modelo WHERE ID_marca='$id'";
-        $resultado1=$mysqli->query($sql1);
         ?>
         <div class="container">
-            <!-- Tabla con los modelos -->
-            <table id="tabla" class="display" >
-                        <thead>
-                            <tr>
-                                <th class="th">Modelo</th>
-                                <th class="th">Número de puertas</th>
-                                <th class="th">Tipo de combustible</th>
-                                <th class="th">Potencia(CV)</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                while($fila1 = $resultado1->fetch_assoc()){
-                                    echo "<tr>";
-                                    echo "<td class='td'>$fila1[nombre_modelo]</td>";
-                                    echo "<td class='td'>$fila1[num_puertas]</td>";
-                                    echo "<td class='td'>$fila1[combustible]</td>";
-                                    echo "<td class='td'>$fila1[cv]</td>";
-                                    ?>
-                                    <!-- Guardo el ID del modelo escogido para llevarlo a la otra página-->
-                                    <td><a href="modificar-modelo3.php?id=<?php echo $fila1['ID_modelo'];?>">Modificar modelo</a></td>
-                                    <?php
-                                    echo "</tr>";
-                                }
-                            ?>
-                        </tbody>
-            </table>
-            <p><a href="modificar-modelo.php">Volver</a></p>
+            <!-- Formulario relleno con los datos a modificar -->
+            <form action="modificar-modelo2.php" method="post" class="formulario">
+                <div>
+                    <label for="nmodelo">Nombre del modelo: </label>
+                    <input type="text" name="modelo_mod" id="modelo_mod" value="<?php echo $nmodelo;?>">
+                </div>
+                <br>
+                <div>
+                    <label for="npuertas">Número de puertas: </label>
+                    <input type="number" name="puertas_mod" id="puertas_mod" value="<?php echo $npuertas;?>">
+                </div>
+                <br>
+                <div>
+                    <label for="comb">Tipo de combustible: </label>
+                    <input type="text" name="comb_mod" id="comb_mod" value="<?php echo $comb;?>">
+                </div>
+                <br>
+                <div>
+                    <label for="cv">Potencia(CV): </label>
+                    <input type="text" name="cv_mod" id="cv_mod" value="<?php echo $cv;?>">
+                </div>
+                <br>
+                <div class="form-btn">
+                    <input type="submit" value="Modificar">
+                </div>
+            </form>
         </div>
-    <?php
+        <?php
     } else {
-        echo "No se ha traído el nombre de la marca";
+        // Guardo los datos del formulario en variables
+        $modelo_mod=$_POST["modelo_mod"];
+        $puertas_mod=$_POST["puertas_mod"];
+        $comb_mod=$_POST["comb_mod"];
+        $cv_mod=$_POST["cv_mod"];
+        $idmod=$_SESSION['idmod'];
+        
+        // Update con estos datos
+        $sql1="UPDATE modelo SET nombre_modelo='$modelo_mod', num_puertas='$puertas_mod', combustible='$comb_mod', cv='$cv_mod' WHERE ID_modelo='$idmod'";
+        $resultado1=$mysqli->query($sql1);
+        ?>
+        <div class="bien">
+            <h2 class="bient">Modelo modificado con éxito</h2>
+            <p class="bienb"><a href="admin.html">Inicio</a><a href="modificar-modelo.php">Volver</a></p>
+        </div>
+        <?php
     }
     ?>
 </body>
