@@ -25,6 +25,7 @@ $resultado1=$mysqli->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modelos</title>
     <link rel="stylesheet" href="css/modelo.css">
+	<link rel="icon" href="img/buyacar_89124.ico">
 </head>
 <body>
 	<header>

@@ -22,6 +22,7 @@ if ($resultado->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/añadir-modificar-eliminar.css">
+    <link rel="icon" href="img/buyacar_89124.ico">
     <title>Eliminar modelo</title>
 </head>
 <body>

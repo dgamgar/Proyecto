@@ -24,6 +24,7 @@ if ($resultado->num_rows > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marca</title>
     <link rel="stylesheet" href="css/marca.css">
+    <link rel="icon" href="img/buyacar_89124.ico">
 </head>
 <body>
     <header>
