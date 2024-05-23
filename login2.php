@@ -30,12 +30,10 @@ session_start();
                 $rol=$fila["Rol"];
                 $id=$fila["ID_usu"];
                 $_SESSION['id']=$id;
+                $passwd=$fila["contraseña"];
             }
             // Compruebo la contraseña
-            $sql1="SELECT * FROM usuarios WHERE dni='$dni' AND contraseña='$contraseña'";
-            $resultado1=$mysqli->query($sql1);
-
-            if($resultado1->num_rows>0){
+            if(password_verify($contraseña,$passwd)){
                 // Correcta
                 // Compruebo si es admin o no
                 if($rol>0){
@@ -45,34 +43,34 @@ session_start();
                     // NO admin
                     header("Location:marca.php");
                 }
-            } else {
-                // Incorrecta
+            }else{
                 ?>
                 <h2>Contraseña incorrecta</h2>
                 <p class="btn2"><a href="login.html">Volver</a></p>
                 <footer>
-                <div class="rrss">
-                    <div class="rrss-item">
-                        <img src="img/telefono.png" class="ico"><p>645868195</p>
+                    <div class="rrss">
+                        <div class="rrss-item">
+                            <img src="img/telefono.png" class="ico"><p>645868195</p>
+                        </div>
+                        <div class="rrss-item">
+                            <img src="img/gmail.png" class="ico"><p>dancarautos@gmail.com</p>
+                        </div>
+                        <div class="rrss-item">
+                            <img src="img/instagram.png" class="ico"><p>@dancar_autos</p>
+                        </div>
                     </div>
-                    <div class="rrss-item">
-                        <img src="img/gmail.png" class="ico"><p>dancarautos@gmail.com</p>
+                    <div class="copy">
+                        <div class="copy-item">
+                            <img src="img/copy.png" class="icopy">
+                        </div>
+                        <div class="copy-item">
+                            <p> 2024 DanCar Autos SL. ALL RIGHTS RESERVED.</p>
+                        </div>
                     </div>
-                    <div class="rrss-item">
-                        <img src="img/instagram.png" class="ico"><p>@dancar_autos</p>
-                    </div>
-                </div>
-                <div class="copy">
-                    <div class="copy-item">
-                        <img src="img/copy.png" class="icopy">
-                    </div>
-                    <div class="copy-item">
-                        <p> 2024 DanCar Autos SL. ALL RIGHTS RESERVED.</p>
-                    </div>
-                </div>
-            </footer>
-                <?php
+                </footer>
+            <?php
             }
+
         } else {
             // No existe
             ?>

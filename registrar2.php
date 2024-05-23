@@ -20,6 +20,10 @@
     $dni=$_POST["dni"];
     $contraseña=$_POST["contraseña"];
 
+
+    // Encripto la contraseña
+    $passwd_hashed=password_hash($contraseña, PASSWORD_DEFAULT);
+
     // Establezco conexion con BD
     require "conexion.php";
 
@@ -39,7 +43,7 @@
         // No existe, se puede crear nuevo usuario
         if ($rol>0){
             // Opción de nuevo admin, hago insert con los datos correspondientes
-            $sql1= "INSERT INTO usuarios (rol, nombre, fecha_nac, contraseña, dni) VALUES ('1','$nombre','$fecha_nac','$contraseña','$dni')";
+            $sql1= "INSERT INTO usuarios (rol, nombre, fecha_nac, contraseña, dni) VALUES ('1','$nombre','$fecha_nac','$passwd_hashed','$dni')";
             $resultado1=$mysqli->query($sql1);
         ?>
             <div class="bien">
@@ -50,7 +54,7 @@
             <?php
         } else {
             // Opcion de nuevo comprador, hago insert con los datos correspondientes
-            $sql2="INSERT INTO usuarios (rol, nombre, fecha_nac, contraseña, dni) VALUES ('0','$nombre','$fecha_nac','$contraseña','$dni')";
+            $sql2="INSERT INTO usuarios (rol, nombre, fecha_nac, contraseña, dni) VALUES ('0','$nombre','$fecha_nac','$passwd_hashed','$dni')";
             $resultado2=$mysqli->query($sql2);
         ?>
             <div class="bien">
