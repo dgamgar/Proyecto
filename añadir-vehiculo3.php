@@ -51,6 +51,7 @@ session_start();
                     <input type="submit" value="Añadir">
                 </div>
             </form>
+            <p><a href="añadir.html">Volver</a></p>
         </div>
         <?php
     } else {

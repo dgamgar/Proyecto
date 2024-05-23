@@ -32,57 +32,72 @@ $resultado1=$mysqli->query($sql);
 		<h1>Modelos disponibles</h1>
 		<img src="img/logo2.png" class="logo">
 	</header>
+	<?php
+	// Compruebo si hay modelos asociados a la marca escogida
+	if($resultado1->num_rows>0){
+		// Sí los hay
+	?>
 	<div class="container">
 		<!-- Tabla con los modelos -->
 		<table id="tabla" class="display" >
-					<thead>
-						<tr>
-							<th class="th">Modelo</th>
-							<th class="th">Número de puertas</th>
-							<th class="th">Tipo de combustible</th>
-							<th class="th">Potencia(CV)</th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php
-							while($fila1 = $resultado1->fetch_assoc()){
-								echo "<tr>";
-								echo "<td class='td'>$fila1[nombre_modelo]</td>";
-								echo "<td class='td'>$fila1[num_puertas]</td>";
-								echo "<td class='td'>$fila1[combustible]</td>";
-								echo "<td class='td'>$fila1[cv]</td>";
-								?>
-								<!-- Guardo el ID del modelo escogido para llevarlo a la otra página-->
-								<td><a href="vehiculo.php?id=<?php echo $fila1['ID_modelo'];?>">Ver vehículos disponibles</a></td>
-								<?php
-								echo "</tr>";
-							}
+			<thead>
+				<tr>
+					<th class="th">Modelo</th>
+					<th class="th">Número de puertas</th>
+					<th class="th">Tipo de combustible</th>
+					<th class="th">Potencia(CV)</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+					while($fila1 = $resultado1->fetch_assoc()){
+						echo "<tr>";
+						echo "<td class='td'>$fila1[nombre_modelo]</td>";
+						echo "<td class='td'>$fila1[num_puertas]</td>";
+						echo "<td class='td'>$fila1[combustible]</td>";
+						echo "<td class='td'>$fila1[cv]</td>";
 						?>
-					</tbody>
+						<!-- Guardo el ID del modelo escogido para llevarlo a la otra página-->
+						<td><a href="vehiculo.php?id=<?php echo $fila1['ID_modelo'];?>">Ver vehículos disponibles</a></td>
+						<?php
+						echo "</tr>";
+					}
+				?>
+			</tbody>
 		</table>
 	</div>
+		<?php
+	} else {
+		// No los hay
+		?>
+		<div class="nohay">
+		<h2>Lo sentimos, en estos momentos no tenemos modelos disponibles de esa marca.</h2>
+		</div>
+	<?php
+	}
+	?>
 	<p><a href="marca.php">Volver</a></p>
-	<footer>
-        <div class="rrss">
-            <div class="rrss-item">
-                <img src="img/telefono.png" class="ico"><p>645868195</p>
-            </div>
-            <div class="rrss-item">
-                <img src="img/gmail.png" class="ico"><p>dancarautos@gmail.com</p>
-            </div>
-            <div class="rrss-item">
-                <img src="img/instagram.png" class="ico"><p>@dancar_autos</p>
-            </div>
-        </div>
-        <div class="copy">
-            <div class="copy-item">
-                <img src="img/copy.png" class="icopy">
-            </div>
-            <div class="copy-item">
-                <p> 2024 DanCar Autos SL. ALL RIGHTS RESERVED.</p>
-            </div>
-        </div>
-    </footer>
+	<footer class="footern">
+		<div class="rrss">
+			<div class="rrss-item">
+				<img src="img/telefono.png" class="ico"><p>645868195</p>
+			</div>
+			<div class="rrss-item">
+				<img src="img/gmail.png" class="ico"><p>dancarautos@gmail.com</p>
+			</div>
+			<div class="rrss-item">
+				<img src="img/instagram.png" class="ico"><p>@dancar_autos</p>
+			</div>
+		</div>
+		<div class="copy">
+			<div class="copy-item">
+				<img src="img/copy.png" class="icopy">
+			</div>
+			<div class="copy-item">
+				<p> 2024 DanCar Autos SL. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>
