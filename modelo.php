@@ -78,7 +78,7 @@ $resultado1=$mysqli->query($sql);
 	}
 	?>
 	<p><a href="marca.php">Volver</a></p>
-	<footer class="footern">
+	<footer>
 		<div class="rrss">
 			<div class="rrss-item">
 				<img src="img/telefono.png" class="ico"><p>645868195</p>
