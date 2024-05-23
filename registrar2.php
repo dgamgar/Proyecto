@@ -14,7 +14,6 @@
     </header>
     <?php
     // Me traigo los datos
-    $rol=$_POST["rol"];
     $nombre=$_POST["nombre"];
     $fecha_nac=$_POST["fecha_nac"];
     $dni=$_POST["dni"];
@@ -41,29 +40,16 @@
         <?php
     } else {
         // No existe, se puede crear nuevo usuario
-        if ($rol>0){
-            // Opción de nuevo admin, hago insert con los datos correspondientes
-            $sql1= "INSERT INTO usuarios (rol, nombre, fecha_nac, contraseña, dni) VALUES ('1','$nombre','$fecha_nac','$passwd_hashed','$dni')";
-            $resultado1=$mysqli->query($sql1);
+        $sql2="INSERT INTO usuarios (rol, nombre, fecha_nac, contraseña, dni) VALUES ('0','$nombre','$fecha_nac','$passwd_hashed','$dni')";
+        $resultado2=$mysqli->query($sql2);
         ?>
-            <div class="bien">
-                <br>
-                <h2 class="bi-ad">Usuario ADMIN agregado correctamente</h2>
-                <p><a href="login.html">Iniciar sesión</a></p>
-            </div>
-            <?php
-        } else {
-            // Opcion de nuevo comprador, hago insert con los datos correspondientes
-            $sql2="INSERT INTO usuarios (rol, nombre, fecha_nac, contraseña, dni) VALUES ('0','$nombre','$fecha_nac','$passwd_hashed','$dni')";
-            $resultado2=$mysqli->query($sql2);
-        ?>
-            <div class="bien">
-                <br>
-                <h2 class="bi-com">Usuario COMPRADOR agregado correctamente</h2>
-                <p><a href="login.html">Iniciar sesión</a></p>
-            </div>
-            <?php
-        }
+        <div class="bien">
+            <br>
+            <h2 class="bi-com">Usuario agregado correctamente</h2>
+            <p><a href="login.html">Iniciar sesión</a></p>
+        </div>
+        <?php
+        
     }
 ?>  
     <footer>
