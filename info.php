@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/info.css">
     <link rel="icon" href="img/buyacar_89124.ico">
-    <title>Clientes</title>
+    <title>Ventas</title>
 </head>
 <body>
     <header>
@@ -15,6 +18,7 @@
     <?php
     // Establezco conexió ncon la BD
     require "conexion.php";
+
     // Saco los datos de las ventas
     $sql="SELECT * FROM transacciones";
     $resultado=$mysqli->query($sql);
@@ -24,9 +28,13 @@
         <table id="tabla" class="display" >
             <thead>
                 <tr>
+                    <th class="th">Marca</th>
+                    <th class="th">Modelo</th>
                     <th class="th">Número de Bastidor</th>
+                    <th class="th">Precio(€)</th>
+                    <th class="th">Cliente</th>
+                    <th class="th">DNI</th>
                     <th class="th">Fecha de Compra</th>
-                    <th class="th">Cliente<th>
                     <th></th>
                 </tr>
             </thead>
@@ -34,20 +42,44 @@
                 <?php
                     while($fila = $resultado->fetch_assoc()){
                         $idcliente=$fila["id_comprador"];
-    
+                        $idmodelo=$fila["id_modelo"];
                         echo "<tr>";
-                        echo "<td class='td'>$fila[bastidor]</td>";
-                        echo "<td class='td'>$fila[fecha]</td>";
-                        
-                        // Saco el DNI del comprador y lo muestro
-                        $sql1="SELECT * FROM usuarios WHERE ID_usu='$idcliente'";
+                        $sql1="SELECT * FROM modelo WHERE ID_modelo='$idmodelo'";
                         $resultado1=$mysqli->query($sql1);
-    
+
+                        // Saco el nombre de la marca y el modelo y los muestro
                         while($fila1 = $resultado1->fetch_assoc()){
-                            echo "<td class='td'>$fila1[dni]</td>";
+                            $idmarca=$fila1["ID_marca"];
+
+                            $sql2="SELECT * FROM marca WHERE ID_marca='$idmarca'";
+                            $resultado2=$mysqli->query($sql2);
+
+                            while($fila2 = $resultado2->fetch_assoc()){
+                                echo "<td class='td'>$fila2[nombre_marca]</td>";
+                            }
+
+                            echo "<td class='td'>$fila1[nombre_modelo]</td>";
+
                         }
-    
+
+                        // Muestro bastidor y precio
+                        echo "<td class='td'>$fila[bastidor]</td>";
+                        echo "<td class='td'>$fila[precio]</td>";
+
+                        // Saco el nombre del cliente y el DNI y los muestro
+                        $sql3="SELECT * FROM usuarios WHERE ID_usu='$idcliente'";
+                        $resultado3=$mysqli->query($sql3);
+
+                        while($fila3 = $resultado3->fetch_assoc()){
+                            echo "<td class='td'>$fila3[Nombre]</td>";
+                            echo "<td class='td'>$fila3[dni]</td>";
+                        }
+
+                        // Muestro la fecha de la compra
+                        echo "<td class='td'>$fila[fecha]</td>";
                         echo "</tr>";
+
+                       
                     }
                 ?>
             </tbody>

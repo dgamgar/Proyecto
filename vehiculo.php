@@ -24,8 +24,9 @@ session_start();
         // Compruebo si se ha traído el ID del modelo o no
         if(isset($_GET['id'])){
             // Sí lo ha traído
-            // Guardo el ID en una variable
+            // Guardo el ID en una variable y en una sesión
             $id_modelo=$_GET['id'];
+            $_SESSION['id_modelo']=$id_modelo;
 
             // Saco los datos de los vehículos que hay
             $sql="SELECT * FROM vehiculos WHERE ID_modelo='$id_modelo'";
@@ -49,9 +50,10 @@ session_start();
                             <tbody>
                                 <?php
                                     while($fila = $resultado->fetch_assoc()){
-                                        // Guardo el bastidor en una sesión
+                                        // Guardo el bastidor y el precio en una sesión
                                         $bastidor=$fila["bastidor"];
                                         $_SESSION['bast']=$bastidor;
+                                        $_SESSION['precio']=$fila["precio"];
 
                                         echo "<tr>";
                                         echo "<td class='td'>$fila[bastidor]</td>";

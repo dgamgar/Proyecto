@@ -19,12 +19,14 @@ session_start();
     // Guardo los datos necesarios de las sesiones en variables
     $comp=$_SESSION['id'];
     $bastidor=$_SESSION['bast'];
+    $precio=$_SESSION['precio'];
+    $id_modelo=$_SESSION['id_modelo'];
 
     // Establezco conexión con la BD
     require "conexion.php";
 
     // Inserto los datos necesarios en la tabla transacciones
-    $sql="INSERT INTO transacciones (id_comprador,bastidor,fecha) VALUES ('$comp','$bastidor',CURDATE())";
+    $sql="INSERT INTO transacciones (id_comprador,bastidor,fecha, id_modelo, precio) VALUES ('$comp','$bastidor',CURDATE(), '$id_modelo', '$precio')";
     $resultado=$mysqli->query($sql);
     ?>
     <div class="exito">
