@@ -22,7 +22,7 @@ session_start();
     // Compruebo si se ha traido el ID del modelo
     if(isset($_GET['id'])){
         // Sí lo ha traído
-        
+        $idmodelo=$_GET['id'];
         ?>
         <div class="container">
             <!-- Formulario pidiendo datos necesarios -->
@@ -32,6 +32,7 @@ session_start();
                     <input type="text" name="bastidor" id="bastidor">
                 </div>
                 <br>
+                <input type="hidden" name="id_modelo" value="<?php echo $idmodelo;?>">
                 <div>
                     <label for="color">Color: </label>
                     <input type="text" name="color" id="color">
@@ -56,7 +57,8 @@ session_start();
         <?php
     } else {
         // Guardo el ID del modelo, ID de la marca y todos los datos en variables
-        $id_modelo=$_SESSION['modelo'];
+        // $id_modelo=$_SESSION['modelo'];
+        $id_modelo=$_POST["id_modelo"];
         $id_marca=$_SESSION['mrc'];
         $bastidor=$_POST["bastidor"];
         $color=$_POST["color"];
@@ -78,8 +80,8 @@ session_start();
         } else {
             // No existe el vehículo
             // Insert con todos los datos necesarios
-            $sql="INSERT INTO vehiculos (bastidor, ID_marca, ID_modelo, color, paquete, precio) VALUES ('$bastidor','$id_marca','$id_modelo','$color','$paquete','$precio')";
-            $resultado=$mysqli->query($sql);
+            $sql1="INSERT INTO vehiculos (bastidor, ID_marca, ID_modelo, color, paquete, precio) VALUES ('$bastidor','$id_marca','$id_modelo','$color','$paquete','$precio')";
+            $resultado1=$mysqli->query($sql1);
             ?>
             <div class="bien">
                 <h2 class="bient">Vehículo añadido con éxito</h2>

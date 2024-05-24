@@ -14,8 +14,8 @@ while($fila=$resultado->fetch_assoc()){
 }
 
 // Saco los datos de los modelos de la marca escogida
-$sql="SELECT * FROM modelo WHERE ID_marca='$id'";
-$resultado1=$mysqli->query($sql);
+$sql1="SELECT * FROM modelo WHERE ID_marca='$id'";
+$resultado1=$mysqli->query($sql1);
 ?>
 
 <!DOCTYPE html>

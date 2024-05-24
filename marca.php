@@ -42,7 +42,7 @@ if ($resultado->num_rows > 0) {
                     }
                     ?>
                 </div>
-        <p><a href="salir.php" class="boton">Salir</a></p>
+        <p><a href="clientes.html" class="boton">Volver</a></p>
     </div>
     <footer>
         <div class="rrss">

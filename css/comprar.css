@@ -145,3 +145,9 @@ a{
     border: none; /* Elimina el borde */
     border-radius: 5px; /* Redondea las esquinas del botón */
 }
+
+.volver{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -17,8 +17,8 @@ while($fila=$resultado->fetch_assoc()){
 }
 
 // Saco los datos de los modelos de la marca escogida
-$sql="SELECT * FROM modelo WHERE ID_marca='$id'";
-$resultado1=$mysqli->query($sql);
+$sql1="SELECT * FROM modelo WHERE ID_marca='$id'";
+$resultado1=$mysqli->query($sql1);
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ $resultado1=$mysqli->query($sql);
 								echo "<td class='td'>$fila1[cv]</td>";
 								?>
 								<!-- Guardo el ID del modelo escogido para llevarlo a la otra página-->
-								<td><a href="añadir-vehiculo3.php?id=<?php echo $fila1['ID_modelo'];?>">Añadir vehículo</a></td>
+								<td><a href="añadir-vehiculo3.php?id=<?php echo $id_modelo;?>">Añadir vehículo</a></td>
 								<?php
 								echo "</tr>";
 							}

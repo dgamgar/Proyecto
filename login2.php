@@ -41,7 +41,7 @@ session_start();
                     header("Location:admin.html");
                 } else {
                     // NO admin
-                    header("Location:marca.php");
+                    header("Location:clientes.html");
                 }
             }else{
                 ?>
