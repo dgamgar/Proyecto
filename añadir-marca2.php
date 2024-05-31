@@ -28,8 +28,8 @@
         // Ya existe la marca introducida
         ?>
         <div class="mal">
-            <h2 class="malt">La marca introducida ya existe, inténtelo de nuevo</h2>
-            <p class="malb"><a href='añadir-marca.html'>Volver</a></p>
+            <h2 class="bg-danger rounded" style="padding:10px;">La marca introducida ya existe, inténtelo de nuevo</h2>
+            <p class="malb"><a href='añadir-marca.html' class="btn btn-warning">Volver</a></p>
         </div>
         <?php
     } else {
@@ -39,11 +39,12 @@
         $resultado=$mysqli->query($sql);
         ?>
         <div class="bien">
-            <h2 class="bient">Nueva marca añadida con éxito</h2>
-            <p class="bienb"><a href="admin.html">Inicio</a><a href="añadir-marca.html">Volver</a></p>
+            <h2 class="bg-success rounded" style="padding:10px;">Nueva marca añadida con éxito</h2>
+            <p class="bienb"><a href="admin.html" class="btn btn-primary">Inicio</a><a href="añadir-marca.html" class="btn btn-warning">Volver</a></p>
         </div>
         <?php
     }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

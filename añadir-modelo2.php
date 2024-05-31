@@ -44,8 +44,8 @@ while($fila = $resultado->fetch_assoc()){
         // Ya existe el modelo introducido
         ?>
         <div class="mal">
-            <h2 class="malt">El modelo introducida ya existe, inténtelo de nuevo</h2>
-            <p class="malb"><a href='añadir-modelo.php'>Volver</a></p>
+            <h2 class="bg-danger rounded" style="padding:10px;">El modelo introducido ya existe, inténtelo de nuevo</h2>
+            <p class="malb"><a href='añadir-modelo.php' class="btn btn-warning">Volver</a></p>
         </div>
         <?php
     } else {
@@ -54,8 +54,8 @@ while($fila = $resultado->fetch_assoc()){
         $resultado1=$mysqli->query($sql1);
         ?>
         <div class="bien">
-            <h2 class="bient">Modelo añadido con éxito</h2>
-            <p class="bienb"><a href="admin.html">Inicio</a><a href="añadir-modelo.php">Volver</a></p>
+            <h2 class="bg-success rounded" style="padding:10px;">Modelo añadido con éxito</h2>
+            <p class="bienb"><a href="admin.html" class="btn btn-primary">Inicio</a><a href="añadir-modelo.php" class="btn btn-warning">Volver</a></p>
         </div>
         <?php
     }

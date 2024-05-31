@@ -32,7 +32,7 @@ if ($resultado->num_rows > 0) {
     </header>
     <div class="container">
         <!-- Formulario para escoger la marca en la que añadir el modelo -->
-        <form action="añadir-modelo2.php" method="post" class="formulario">
+        <form action="añadir-modelo2.php" method="post" class="shadow-lg p-3 mb-5 bg-light rounded">
             <div>
                 <label for="marca">Escoja la marca: </label>
                 <select name="marca" id="marca">
@@ -76,10 +76,11 @@ if ($resultado->num_rows > 0) {
             </div>
             <br>
             <div class="form-btn">
-                <input type="submit" value="Añadir">
+                <input type="submit" value="Añadir" class="btn btn-success">
             </div>
         </form>
-        <p><a href="añadir.html">Volver</a></p>
+        <p><a href="añadir.html" class="btn btn-warning">Volver</a></p>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

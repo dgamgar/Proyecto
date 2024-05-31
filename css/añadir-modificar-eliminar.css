@@ -1,9 +1,11 @@
 body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("../img/fondo-admin.jpg");
+    background-size: cover;
 }
 
 header{
-    background-color:rgb(30, 157, 161);
+    background-color:rgb(23, 230, 230);
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -25,11 +27,12 @@ header{
 }
 
 .formulario{
-    background-color: rgb(193, 221, 224);
+    background-color: rgb(199, 201, 201);
     padding: 10px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    margin-bottom:10px;
 }
 .form-btn{
     display: flex;

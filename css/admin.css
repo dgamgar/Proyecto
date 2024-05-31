@@ -1,9 +1,11 @@
 body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('../img/fondo-admin.jpg');
+    background-size: cover;
 }
 
 header{
-    background-color:rgb(30, 157, 161);
+    background-color:rgb(23, 230, 230);
     display: flex;
     justify-content: space-between;
     padding: 10px;

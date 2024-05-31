@@ -34,8 +34,12 @@ if ($resultado->num_rows > 0) {
     </header>
     <div class="container">
         <!-- Menú desplegable para escoger marca -->
-        <form action="añadir-vehiculo2.php" method="post" class="form-ve">
-            <p>Escoja la marca a la que pertenecerá el nuevo vehículo </p>
+        <form action="añadir-vehiculo2.php" method="post" class="shadow-lg p-3 mb-5 bg-light rounded">
+            <div class="">
+                HAY QUE CONFIGURAR ESTE FORMULARIO PARA QUE SALGA bien
+                COMPROBAR EN WEB
+            </div>
+            <p>Escoja una marca</p>
             <select name="marca" id="marca" class="marca">
                 <?php
                 // Recorro todo el array mostrando las marcas que hay almacenadas
@@ -45,10 +49,14 @@ if ($resultado->num_rows > 0) {
                 ?>
             </select>
             <div class="form-btn">
-                <input type="submit" value="Siguiente">
+                <input type="submit" value="Siguiente" class="btn btn-primary">
             </div>
         </form>
-        <p><a href="admin.html" class="btn-ve">Volver</a></p>
+        <p><a href="admin.html" class="btn btn-warning">Volver</a></p>
     </div>
+    <footer class="card text-center fixed-bottom bg-info">
+        <p>Debe escoger la marca a la que pertenecerá el nuevo vehículo.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
