@@ -34,9 +34,8 @@ if ($resultado->num_rows > 0) {
     <div class="container">
         <table id="tabla">
             <thead>
-                <tr>
-                    <th class="th">Marcas</th>
-                    <th></th>
+                <tr class="bg-dark">
+                    <th style="color:white; padding:10px;">Marcas</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,16 +43,21 @@ if ($resultado->num_rows > 0) {
                     // Recorro todo el array mostrando las marcas que hay almacenadas
                     foreach ($marcas as $marca){
                         echo "<tr>";
-                        echo "<td class='td'>$marca</td>";
+                        echo "<td class='bg-light border-bottom' style='padding:10px;'>$marca</td>";
                         ?>
-                        <td><a href="modificar-marca2.php?id=<?php echo $marca;?>">Modificar</a></td>
+                        <td><a href="modificar-marca2.php?id=<?php echo $marca;?>" class="btn btn-primary">Modificar</a></td>
                         <?php
                         echo "</tr>";
                     }
                     ?>
             </tbody>
         </table>
-        <p><a href="admin.html">Inicio</a></p>
+        <p><a href="admin.html" class="btn btn-warning" style="margin-top:10px;">Inicio</a></p>
     </div>
+    <footer class="card text-center bg-info">
+        <h5>INFO</h5>
+        <p>Aquí debes escoger la marca que desees modificar.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

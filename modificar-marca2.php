@@ -37,19 +37,22 @@ session_start();
 
         ?>
         <div class="container">
-            <h2>Introduzca el nuevo nombre de la marca</h2>
             <!-- Formulario para pidiendo la modificación de la marca -->
-            <form action="modificar-marca2.php" method="post" class="formulario">
+            <form action="modificar-marca2.php" method="post" class="shadow-lg p-3 mb-5 bg-light rounded">
                 <div>
                     <label for="marca1">Nuevo nombre: </label>
                     <input type="text" name="marca1" id="marca1">
                 </div>
                 <div class="btn-mod">
-                    <input type="submit" value="Modificar">
+                    <input type="submit" value="Modificar" class="btn btn-success">
                 </div>
             </form>
-            <p><a href="modificar-marca.php">Volver</a></p>
+            <p><a href="modificar-marca.php" class="btn btn-warning">Volver</a></p>
         </div>
+        <footer class="card fixed-bottom text-center bg-info">
+            <h5>INFO</h5>
+            <p>Aquí debe introducir el nombre modificado para la marca escogida.</p>
+        </footer>
         <?php
     } else {
         // Me traigo el nuevo nombre y el Id de la marca
@@ -64,11 +67,12 @@ session_start();
         $resultado=$mysqli->query($sql);
         ?>
         <div class="bien">
-            <h2 class="bient">Marca modificada con éxito</h2>
-            <p class="bienb"><a href="admin.html">Inicio</a><a href="modificar-marca.php">Volver</a></p>
+            <h2 class="bg-success rounded" style="padding:10px;">Marca modificada con éxito</h2>
+            <p class="bienb"><a href="admin.html" class="btn btn-primary" style="margin:10px;">Inicio</a><a href="modificar-marca.php" class="btn btn-warning">Volver</a></p>
         </div>
         <?php
     }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
