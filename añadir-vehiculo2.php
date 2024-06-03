@@ -38,36 +38,45 @@ $resultado1=$mysqli->query($sql1);
     </header>
 	<div class="container">
 		<!-- Tabla con los modelos -->
-		<table id="tabla" class="display" >
-					<thead>
+		<table id="tabla" class="table">
+					<thead class="table-dark">
 						<tr>
-							<th class="th">Modelo</th>
-							<th class="th">Número de puertas</th>
-							<th class="th">Tipo de combustible</th>
-							<th class="th">Potencia(CV)</th>
-							<th></th>
+							<th>Modelo</th>
+							<th>Número de puertas</th>
+							<th>Tipo de combustible</th>
+							<th>Potencia(CV)</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody class="table-light">
 						<?php
-							while($fila1 = $resultado1->fetch_assoc()){
-								$id_modelo=$fila1["ID_modelo"];
-								$_SESSION['modelo']=$id_modelo;
-								echo "<tr>";
-								echo "<td class='td'>$fila1[nombre_modelo]</td>";
-								echo "<td class='td'>$fila1[num_puertas]</td>";
-								echo "<td class='td'>$fila1[combustible]</td>";
-								echo "<td class='td'>$fila1[cv]</td>";
+							if($resultado1->num_rows>0){
+								while($fila1 = $resultado1->fetch_assoc()){
+									$id_modelo=$fila1["ID_modelo"];
+									$_SESSION['modelo']=$id_modelo;
+									echo "<tr>";
+									echo "<td>$fila1[nombre_modelo]</td>";
+									echo "<td>$fila1[num_puertas]</td>";
+									echo "<td>$fila1[combustible]</td>";
+									echo "<td>$fila1[cv]</td>";
+									?>
+									<!-- Guardo el ID del modelo escogido para llevarlo a la otra página-->
+									<td><a href="añadir-vehiculo3.php?id=<?php echo $id_modelo;?>" class="btn btn-primary">Añadir vehículo</a></td>
+									<?php
+									echo "</tr>";
+								}
+							
+							} else {
 								?>
-								<!-- Guardo el ID del modelo escogido para llevarlo a la otra página-->
-								<td><a href="añadir-vehiculo3.php?id=<?php echo $id_modelo;?>">Añadir vehículo</a></td>
+								<footer class="card text-center fixed-bottom bg-warning">
+       								<h3>Lo sentimos, no disponemos de modelos de la marca escogida.</h3>
+    							</footer>
 								<?php
-								echo "</tr>";
 							}
+
 						?>
 					</tbody>
 		</table>
-		<p><a href="añadir-vehiculo.php">Volver</a></p>
+		<p><a href="añadir-vehiculo.php" class="btn btn-warning" style="margin-top:10px;">Volver</a></p>
 	</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

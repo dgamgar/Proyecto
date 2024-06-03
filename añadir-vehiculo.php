@@ -34,21 +34,21 @@ if ($resultado->num_rows > 0) {
     </header>
     <div class="container">
         <!-- Menú desplegable para escoger marca -->
-        <form action="añadir-vehiculo2.php" method="post" class="shadow-lg p-3 mb-5 bg-light rounded">
-            <div class="">
-                HAY QUE CONFIGURAR ESTE FORMULARIO PARA QUE SALGA bien
-                COMPROBAR EN WEB
+        <form action="añadir-vehiculo2.php" method="post" class="shadow-lg p-3 mb-5 bg-light rounded row g-1">
+            <div class="col-auto" style="margin-top:12px;">
+                <label for="marca" class="form-label">Escoja una marca</label>
             </div>
-            <p>Escoja una marca</p>
-            <select name="marca" id="marca" class="marca">
-                <?php
-                // Recorro todo el array mostrando las marcas que hay almacenadas
-                foreach ($marcas as $marca){
-                    echo "<option value='$marca'>$marca</option>";
-                }
-                ?>
-            </select>
-            <div class="form-btn">
+            <div class="col-auto">
+                <select name="marca" id="marca" class="marca">
+                    <?php
+                    // Recorro todo el array mostrando las marcas que hay almacenadas
+                    foreach ($marcas as $marca){
+                        echo "<option value='$marca'>$marca</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="form-btn col-auto">
                 <input type="submit" value="Siguiente" class="btn btn-primary">
             </div>
         </form>

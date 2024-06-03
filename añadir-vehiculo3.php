@@ -27,33 +27,33 @@ session_start();
         ?>
         <div class="container">
             <!-- Formulario pidiendo datos necesarios -->
-            <form action="añadir-vehiculo3.php" method="post" class="formulario">
-                <div>
-                    <label for="bastidor">Número de bastidor: </label>
-                    <input type="text" name="bastidor" id="bastidor">
+            <form action="añadir-vehiculo3.php" method="post" class="shadow-lg p-3 mb-5 bg-light rounded">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" name="bastidor" id="bastidor" placeholder="Nº de Bastidor" class="form-control">
+                    </div>
+                    <div class="col">
+                        <input type="text" name="color" id="color" placeholder="Color" class="form-control">
+                    </div>
+                </div>
+                <div class="row" style="margin-top:10px;">
+                    <div class="col">
+                        <input type="text" name="paquete" id="paquete" placeholder="Pack de Estética" class="form-control">
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="text" name="precio" id="precio" class="form-control" placeholder="Precio">
+                            <span class="input-group-text">€</span>
+                        </div>
+                    </div>
                 </div>
                 <br>
                 <input type="hidden" name="id_modelo" value="<?php echo $idmodelo;?>">
-                <div>
-                    <label for="color">Color: </label>
-                    <input type="text" name="color" id="color">
-                </div>
-                <br>
-                <div>
-                    <label for="paquete">Pack de estética: </label>
-                    <input type="text" name="paquete" id="paquete">
-                </div>
-                <br>
-                <div>
-                    <label for="precio">Precio(€): </label>
-                    <input type="text" name="precio" id="precio">
-                </div>
-                <br>
                 <div class="form-btn">
-                    <input type="submit" value="Añadir">
+                    <input type="submit" value="Añadir" class="btn btn-success">
                 </div>
             </form>
-            <p><a href="añadir.html">Volver</a></p>
+            <p><a href="añadir.html" class="btn btn-warning">Volver</a></p>
         </div>
         <?php
     } else {
@@ -74,8 +74,8 @@ session_start();
             // Ya existe el vehículo introducido
             ?>
             <div class="mal">
-                <h2 class="malt">El vehículo introducido ya existe, inténtelo de nuevo</h2>
-                <p class="malb"><a href='añadir-vehiculo.php'>Volver</a></p>
+                <h2 class="bg-danger rounded" style="padding:10px;">El vehículo introducido ya existe, inténtelo de nuevo</h2>
+                <p class="malb"><a href='añadir-vehiculo.php' class="btn btn-warning">Volver</a></p>
             </div>
             <?php
         } else {
@@ -85,8 +85,8 @@ session_start();
             $resultado1=$mysqli->query($sql1);
             ?>
             <div class="bien">
-                <h2 class="bient">Vehículo añadido con éxito</h2>
-                <p class="bienb"><a href="admin.html">Inicio</a><a href="añadir-vehiculo.php">Volver</a></p>
+                <h2 class="bg-success rounded" style="padding:10px;">Vehículo añadido con éxito</h2>
+                <p class="bienb"><a href="admin.html" class="btn btn-primary">Inicio</a><a href="añadir-vehiculo.php" class="btn btn-warning">Volver</a></p>
             </div>
             <?php
         }

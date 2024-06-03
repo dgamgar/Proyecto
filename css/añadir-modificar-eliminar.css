@@ -34,6 +34,7 @@ header{
     flex-direction: column;
     margin-bottom:10px;
 }
+
 .form-btn{
     display: flex;
     justify-content: center;
@@ -67,18 +68,18 @@ header{
     padding:10px;
 }
 
-a{
+/* a{
     text-align: center;
     margin-left: 50px;
     margin-right: 50px;
     display: inline-block;
     padding: 10px 20px;
     background-color: rgb(211, 206, 206); /* Color de fondo del botón */
-    color: black; /* Color del texto del botón */
-    text-decoration: none; /* Elimina el subrayado */
-    border: none; /* Elimina el borde */
-    border-radius: 5px; /* Redondea las esquinas del botón */
-}
+    /* color: black; Color del texto del botón */
+    /* text-decoration: none; Elimina el subrayado */
+    /* border: none; Elimina el borde */
+    /* border-radius: 5px; Redondea las esquinas del botón */
+/* } */ 
 
 .form-ve{
     border-radius: 5px;
@@ -86,10 +87,6 @@ a{
     display: grid;
     grid-template-columns: 2fr 1fr 0.2fr;
     padding:10px;
-}
-
-.marca{
-    margin:10px;
 }
 
 .th, .td {
@@ -111,4 +108,8 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.col-auto{
+    margin:60px;
 }
