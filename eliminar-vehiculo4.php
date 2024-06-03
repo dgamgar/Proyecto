@@ -27,13 +27,14 @@
         $resultado=$mysqli->query($sql);
         ?>
         <div class="bien">
-            <h2 class="bient">Vehículo eliminado con exito</h2>
-            <p class="bienb"><a href="admin.html">Inicio</a><a href="eliminar-vehiculo.php">Volver</a></p>
+            <h2 class="bg-success rounded" style="padding:10px;">Vehículo eliminado con exito</h2>
+            <p class="bienb"><a href="admin.html" class="btn btn-primary" style="margin:10px;">Inicio</a><a href="eliminar-vehiculo.php" class="btn btn-warning">Volver</a></p>
         </div>
         <?php
     } else {
         echo "No se lo ha traído";
     }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

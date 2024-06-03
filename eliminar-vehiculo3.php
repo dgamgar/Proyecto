@@ -32,47 +32,55 @@
             ?>
             <div class="container">
                 <!-- Tabla mostrando los datos de todos los vehículos del modelo escogido -->
-                <table id="tabla" class="display" >
+                <table id="tabla">
                             <thead>
-                                <tr>
-                                    <th class="th">Número de bastidor</th>
-                                    <th class="th">Color</th>
-                                    <th class="th">Pack Estética</th>
-                                    <th class="th">Precio(€)</th>
-                                    <th></th>
+                                <tr class="bg-dark">
+                                    <th style="color:white; padding:10px;">Número de bastidor</th>
+                                    <th style="color:white; padding:10px;">Color</th>
+                                    <th style="color:white; padding:10px;">Pack Estética</th>
+                                    <th style="color:white; padding:10px;">Precio(€)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                     while($fila = $resultado->fetch_assoc()){                                
                                         echo "<tr>";
-                                        echo "<td class='td'>$fila[bastidor]</td>";
-                                        echo "<td class='td'>$fila[color]</td>";
-                                        echo "<td class='td'>$fila[paquete]</td>";
-                                        echo "<td class='td'>$fila[precio]</td>";
+                                        echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila[bastidor]</td>";
+                                        echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila[color]</td>";
+                                        echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila[paquete]</td>";
+                                        echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila[precio]</td>";
                                         ?>
-                                        <td><a href="eliminar-vehiculo4.php?id=<?php echo $fila["bastidor"];?>">Eliminar</a></td>
+                                        <td><a href="eliminar-vehiculo4.php?id=<?php echo $fila["bastidor"];?>" class="btn btn-danger">Eliminar</a></td>
                                         <?php
                                         echo "</tr>";
                                     }
                                 ?>
                             </tbody>
                 </table>
-                <p><a href="eliminar-vehiculo.php">Volver</a></p>
+                <p><a href="eliminar-vehiculo.php" class="btn btn-warning">Volver</a></p>
             </div>
+            <footer class="card fixed-bottom text-center bg-info">
+                <h5>INFO</h5>
+                <p>Escoja el vehículo que desea eliminar.</p>
+            </footer>
             <?php
         } else {
             // No hay
             ?>
             <div class="mal">
-                <h2 class="malt">No existen vehículos del modelo seleccionado, inténtelo de nuevo</h2>
-                <p class="malb"><a href="admin.html">Inicio</a><a href="eliminar-vehiculo.php">Volver</a></p>
+                <h2 class="bg-danger rounded" style="padding:10px;">ERROR: No hay vehículos asociados</h2>
+                <p class="malb"><a href="admin.html" class="btn btn-primary" style="margin:10px;">Inicio</a><a href="eliminar-vehiculo.php" class="btn btn-warning">Volver</a></p>
             </div>
+            <footer class="card fixed-bottom text-center bg-info">
+                <h5>INFO</h5>
+                <p>No tenemos vehículos asociados al modelo escogido, inténtelo de nuevo con otro modelo.</p>
+            </footer>
             <?php
         }
     } else {
         echo "No se lo ha traído";
     }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
