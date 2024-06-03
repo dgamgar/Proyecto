@@ -28,15 +28,14 @@
         <!-- Tabla con ventas -->
         <table id="tabla" class="display" >
             <thead>
-                <tr>
-                    <th class="th">Marca</th>
-                    <th class="th">Modelo</th>
-                    <th class="th">Número de Bastidor</th>
-                    <th class="th">Precio(€)</th>
-                    <th class="th">Cliente</th>
-                    <th class="th">DNI</th>
-                    <th class="th">Fecha de Compra</th>
-                    <th></th>
+                <tr class="bg-dark">
+                    <th style="color:white; padding:10px;">Marca</th>
+                    <th style="color:white; padding:10px;">Modelo</th>
+                    <th style="color:white; padding:10px;">Número de Bastidor</th>
+                    <th style="color:white; padding:10px;">Precio(€)</th>
+                    <th style="color:white; padding:10px;">Cliente</th>
+                    <th style="color:white; padding:10px;">DNI</th>
+                    <th style="color:white; padding:10px;">Fecha de Compra</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,28 +55,28 @@
                             $resultado2=$mysqli->query($sql2);
 
                             while($fila2 = $resultado2->fetch_assoc()){
-                                echo "<td class='td'>$fila2[nombre_marca]</td>";
+                                echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila2[nombre_marca]</td>";
                             }
 
-                            echo "<td class='td'>$fila1[nombre_modelo]</td>";
+                            echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila1[nombre_modelo]</td>";
 
                         }
 
                         // Muestro bastidor y precio
-                        echo "<td class='td'>$fila[bastidor]</td>";
-                        echo "<td class='td'>$fila[precio]</td>";
+                        echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila[bastidor]</td>";
+                        echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila[precio]</td>";
 
                         // Saco el nombre del cliente y el DNI y los muestro
                         $sql3="SELECT * FROM usuarios WHERE ID_usu='$idcliente'";
                         $resultado3=$mysqli->query($sql3);
 
                         while($fila3 = $resultado3->fetch_assoc()){
-                            echo "<td class='td'>$fila3[Nombre]</td>";
-                            echo "<td class='td'>$fila3[dni]</td>";
+                            echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila3[Nombre]</td>";
+                            echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila3[dni]</td>";
                         }
 
                         // Muestro la fecha de la compra
-                        echo "<td class='td'>$fila[fecha]</td>";
+                        echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila[fecha]</td>";
                         echo "</tr>";
 
                        
@@ -85,7 +84,12 @@
                 ?>
             </tbody>
         </table>
-        <p><a href="admin.html">Volver</a></p>
+        <p><a href="admin.html" class="btn btn-warning" style="margin-top: 10px;">Volver</a></p>
     </div>
+    <footer class="card text-center bg-info">
+        <h5>INFO</h5>
+        <p>Aquí se muestran todas las ventas realizadas.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
