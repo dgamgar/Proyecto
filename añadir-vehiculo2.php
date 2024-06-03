@@ -38,26 +38,26 @@ $resultado1=$mysqli->query($sql1);
     </header>
 	<div class="container">
 		<!-- Tabla con los modelos -->
-		<table id="tabla" class="table">
-					<thead class="table-dark">
-						<tr>
-							<th>Modelo</th>
-							<th>Número de puertas</th>
-							<th>Tipo de combustible</th>
-							<th>Potencia(CV)</th>
+		<table id="tabla">
+					<thead>
+						<tr class="bg-dark">
+							<th style="color:white; padding:10px;">Modelo</th>
+							<th style="color:white; padding:10px;">Número de puertas</th>
+							<th style="color:white; padding:10px;">Tipo de combustible</th>
+							<th style="color:white; padding:10px;">Potencia(CV)</th>
 						</tr>
 					</thead>
-					<tbody class="table-light">
+					<tbody>
 						<?php
 							if($resultado1->num_rows>0){
 								while($fila1 = $resultado1->fetch_assoc()){
 									$id_modelo=$fila1["ID_modelo"];
 									$_SESSION['modelo']=$id_modelo;
 									echo "<tr>";
-									echo "<td>$fila1[nombre_modelo]</td>";
-									echo "<td>$fila1[num_puertas]</td>";
-									echo "<td>$fila1[combustible]</td>";
-									echo "<td>$fila1[cv]</td>";
+									echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila1[nombre_modelo]</td>";
+									echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila1[num_puertas]</td>";
+									echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila1[combustible]</td>";
+									echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila1[cv]</td>";
 									?>
 									<!-- Guardo el ID del modelo escogido para llevarlo a la otra página-->
 									<td><a href="añadir-vehiculo3.php?id=<?php echo $id_modelo;?>" class="btn btn-primary">Añadir vehículo</a></td>

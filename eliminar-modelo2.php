@@ -11,6 +11,7 @@
 <body>
     <header>
         <h1>Eliminar modelo</h1>
+        <img src="img/logo2.png" class="logo">
     </header>
     <?php
     // Establezco conexión con la BD
@@ -42,46 +43,55 @@
                 <!-- Tabla con los modelos -->
                 <table id="tabla" class="display" >
                             <thead>
-                                <tr>
-                                    <th class="th">Modelo</th>
-                                    <th class="th">Número de puertas</th>
-                                    <th class="th">Tipo de combustible</th>
-                                    <th class="th">Potencia(CV)</th>
-                                    <th></th>
+                                <tr class="bg-dark">
+                                    <th style="color:white; padding:10px;">Modelo</th>
+                                    <th style="color:white; padding:10px;">Número de puertas</th>
+                                    <th style="color:white; padding:10px;">Tipo de combustible</th>
+                                    <th style="color:white; padding:10px;">Potencia(CV)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                     while($fila1 = $resultado1->fetch_assoc()){
                                         echo "<tr>";
-                                        echo "<td class='td'>$fila1[nombre_modelo]</td>";
-                                        echo "<td class='td'>$fila1[num_puertas]</td>";
-                                        echo "<td class='td'>$fila1[combustible]</td>";
-                                        echo "<td class='td'>$fila1[cv]</td>";
+                                        echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila1[nombre_modelo]</td>";
+                                        echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila1[num_puertas]</td>";
+                                        echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila1[combustible]</td>";
+                                        echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila1[cv]</td>";
                                         ?>
                                         <!-- Guardo el ID del modelo escogido para llevarlo a la otra página-->
-                                        <td><a href="eliminar-modelo3.php?id=<?php echo $fila1['ID_modelo'];?>">Eliminar</a></td>
+                                        <td><a href="eliminar-modelo3.php?id=<?php echo $fila1['ID_modelo'];?>" class="btn btn-danger">Eliminar</a></td>
                                         <?php
                                         echo "</tr>";
                                     }
                                 ?>
                             </tbody>
                 </table>
-                <p><a href="eliminar-modelo.php">Volver</a><a href="admin.html">Inicio</a></p>
+                <p><a href="eliminar-modelo.php" class="btn btn-warning" style="margin:10px;">Volver</a><a href="admin.html" class="btn btn-primary" style="margin:10px;">Inicio</a></p>
             </div>
+
+            <footer class="card fixed-bottom text-center bg-info">
+                <h5>INFO</h5>
+                <p>Aquí podrá escoger el modelo que desee eliminar.</p>
+            </footer>
             <?php
 
         } else {
             // No hay modelos
             ?>
             <div class="mal">
-                <h2 class="malt">No tenemos modelos registrados de la marca seleccionada, inténtelo de nuevo</h2>
-                <p class="malb"><a href="eliminar-modelo.php">Volver</a></p>
+                <h2 class="bg-danger rounded" style="padding:10px;">ERROR: No hay modelos disponibles</h2>
+                <p class="malb"><a href="eliminar-modelo.php" class="btn btn-warning">Volver</a></p>
             </div>
+            <footer class="card fixed-bottom text-center bg-info">
+                <h5>INFO</h5>
+                <p>No tenemos modelos asociados a la marca escogida, inténtelo de nuevo con otra marca.</p>
+            </footer>
             <?php
         }
 
     }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

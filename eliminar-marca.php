@@ -37,9 +37,8 @@ if ($resultado->num_rows > 0) {
     <div class="container">
         <table id="tabla">
             <thead>
-                <tr>
-                    <th class="th">Marcas</th>
-                    <th></th>
+                <tr class="bg-dark">
+                    <th style="color:white; padding:10px;">Marcas</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,17 +46,21 @@ if ($resultado->num_rows > 0) {
                     // Recorro todo el array mostrando las marcas que hay almacenadas
                     foreach ($marcas as $marca){
                         echo "<tr>";
-                        echo "<td class='td'>$marca</td>";
+                        echo "<td class='bg-light border-bottom' style='padding:10px;'>$marca</td>";
                         ?>
-                        <td><a href="eliminar-marca.php?id=<?php echo $marca;?>">Eliminar</a></td>
+                        <td><a href="eliminar-marca.php?id=<?php echo $marca;?>" class="btn btn-danger">Eliminar</a></td>
                         <?php
                         echo "</tr>";
                     }
                     ?>
             </tbody>
         </table>
-        <p><a href="admin.html">Inicio</a></p>
+        <p><a href="eliminar.html" class="btn btn-warning" style="margin-top:10px;">Volver</a></p>
     </div>
+    <footer class="card text-center bg-info">
+        <h5>INFO</h5>
+        <p>Aquí podrá eliminar la marca que desee.</p>
+    </footer>
     <?php
     } else {
         $nmarca=$_GET["id"];
@@ -79,10 +82,14 @@ if ($resultado->num_rows > 0) {
             // Sí hay modelos
             ?>
             <div class="mal">
-                <h2 class="malt">Hay registrados modelos de esta marca, primero elimine los modelos.</h2>
-                <p class="malb"><a href="eliminar-modelo2.php?id=<?php echo $nmarca;?>">Eliminar modelos de esta marca</a></p>
-                <p class="malb"><a href="eliminar-marca.php">Volver</a></p>
+                <h2 class="bg-danger rounded" style="padding:10px;">ERROR: No se ha podido eliminar esta marca</h2>
+                <p><a href="eliminar-modelo2.php?id=<?php echo $nmarca;?>" class="btn btn-warning">Eliminar modelos</a>
+                <a href="eliminar-marca.php" class="btn btn-light">Volver</a></p>
             </div>
+            <footer class="card text-center fixed-bottom bg-info">
+                <h5>INFO</h5>
+                <p>Para poder eliminar una marca, primero deberá eliminar los modelos asociados a esta.</p>
+            </footer>
             <?php
         } else {
             // No hay modelos
@@ -93,5 +100,6 @@ if ($resultado->num_rows > 0) {
         }
     }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

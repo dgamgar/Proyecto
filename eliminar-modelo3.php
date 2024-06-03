@@ -30,10 +30,14 @@
             // Sí hay vehículos
             ?>
             <div class="mal">
-                <h2 class="malt">Hay vehículos registrados para este modelo, por favor, elimínelos para poder eliminar este modelo.</h2>
-                <p class="malb"><a href="eliminar-vehiculo3.php?id=<?php echo $idmodelo;?>">Eliminar vehículos de este modelo</a></p>
-                <p class="malb"><a href="eliminar-modelo.php">Volver</a></p>
+                <h2 class="bg-danger rounded" style="padding:10px;">ERROR: No se ha podido eliminar el modelo escogido.</h2>
+                <p><a href="eliminar-vehiculo3.php?id=<?php echo $idmodelo;?>" class="btn btn-warning">Eliminar vehículos</a>
+                <a href="eliminar-modelo.php" class="btn btn-light">Volver</a></p>
             </div>
+            <footer class="card text-center fixed-bottom bg-info">
+                <h5>INFO</h5>
+                <p>Para poder eliminar un modelo, primero debe eliminar los vehículos asociados a este.</p>
+            </footer>
             <?php
         } else {
             // No hay vehículos
@@ -42,12 +46,13 @@
             $resultado1=$mysqli->query($sql1);
             ?>
             <div class="bien">
-                <h2 class="bient">Modelo eliminado con éxito</h2>
-                <p class="bienb"><a href="admin.html">Inicio</a><a href="eliminar-modelo.php">Volver</a></p>
+                <h2 class="bg-success rounded" style="padding:10px;">Modelo eliminado con éxito</h2>
+                <p class="bienb"><a href="admin.html" class="btn btn-primary" style="margin:10px;">Inicio</a><a href="eliminar-modelo.php" class="btn btn-warning">Volver</a></p>
             </div>
             <?php
         }
     }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
