@@ -34,27 +34,30 @@ if ($resultado->num_rows > 0) {
     </header>
     <div class="container">
         <!-- Menú desplegable para escoger marca -->
-        <form action="añadir-vehiculo2.php" method="post" class="shadow-lg p-3 mb-5 bg-light rounded row g-1">
-            <div class="col-auto" style="margin-top:12px;">
-                <label for="marca" class="form-label">Escoja una marca</label>
-            </div>
-            <div class="col-auto">
-                <select name="marca" id="marca" class="marca">
-                    <?php
-                    // Recorro todo el array mostrando las marcas que hay almacenadas
-                    foreach ($marcas as $marca){
-                        echo "<option value='$marca'>$marca</option>";
-                    }
-                    ?>
-                </select>
-            </div>
-            <div class="form-btn col-auto">
-                <input type="submit" value="Siguiente" class="btn btn-primary">
+        <form action="añadir-vehiculo2.php" method="post" class="shadow-lg p-3 mb-5 bg-light rounded">
+            <div class="row">
+                <div class="col">
+                    <label for="marca" class="form-label">Escoja marca</label>
+                </div>
+                <div class="col">
+                    <select name="marca" id="marca" class="marca" class="form-select">
+                        <?php
+                        // Recorro todo el array mostrando las marcas que hay almacenadas
+                        foreach ($marcas as $marca){
+                            echo "<option value='$marca'>$marca</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="submit" value="Siguiente" class="btn btn-primary">
+                </div>
             </div>
         </form>
         <p><a href="admin.html" class="btn btn-warning">Volver</a></p>
     </div>
     <footer class="card text-center fixed-bottom bg-info">
+        <h5>INFO</h5>
         <p>Debe escoger la marca a la que pertenecerá el nuevo vehículo.</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
