@@ -22,7 +22,7 @@ if ($resultado->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/añadir-modificar-eliminar.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <link rel="icon" href="img/buyacar_89124.ico">
     <title>Eliminar marca</title>
 </head>
@@ -81,7 +81,7 @@ if ($resultado->num_rows > 0) {
         if($resultado1->num_rows>0){
             // Sí hay modelos
             ?>
-            <div class="mal">
+            <div class="container">
                 <h2 class="bg-danger rounded" style="padding:10px;">ERROR: No se ha podido eliminar esta marca</h2>
                 <p><a href="eliminar-modelo2.php?id=<?php echo $nmarca;?>" class="btn btn-warning">Eliminar modelos</a>
                 <a href="eliminar-marca.php" class="btn btn-light">Volver</a></p>

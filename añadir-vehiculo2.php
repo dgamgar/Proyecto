@@ -27,7 +27,7 @@ $resultado1=$mysqli->query($sql1);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/añadir-modificar-eliminar.css">
+    <link rel="stylesheet" href="css/estilos.css">
 	<link rel="icon" href="img/buyacar_89124.ico">
     <title>Añadir vehículo</title>
 </head>
@@ -37,6 +37,9 @@ $resultado1=$mysqli->query($sql1);
         <img src="img/logo2.png" class="logo">
     </header>
 	<div class="container">
+		<?php
+		if($resultado1->num_rows>0){
+		?>
 		<!-- Tabla con los modelos -->
 		<table id="tabla">
 					<thead>
@@ -49,7 +52,6 @@ $resultado1=$mysqli->query($sql1);
 					</thead>
 					<tbody>
 						<?php
-							if($resultado1->num_rows>0){
 								while($fila1 = $resultado1->fetch_assoc()){
 									$id_modelo=$fila1["ID_modelo"];
 									$_SESSION['modelo']=$id_modelo;
@@ -64,18 +66,20 @@ $resultado1=$mysqli->query($sql1);
 									<?php
 									echo "</tr>";
 								}
-							
-							} else {
-								?>
-								<footer class="card text-center fixed-bottom bg-warning">
-       								<h3>Lo sentimos, no disponemos de modelos de la marca escogida.</h3>
-    							</footer>
-								<?php
-							}
-
 						?>
 					</tbody>
 		</table>
+		<?php
+		} else {
+			?>
+			<h2 class="bg-warning rounded" style="padding:10px;">ERROR: No hay modelos</h2>
+			<footer class="card text-center fixed-bottom bg-info">
+				<h5>INFO</h5>
+       			<p>No disponemos de modelos de la marca escogida, inténtelo de nuevo con otra marca.</p>
+    		</footer>
+			<?php
+		}
+		?>
 		<p><a href="añadir-vehiculo.php" class="btn btn-warning" style="margin-top:10px;">Volver</a></p>
 	</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

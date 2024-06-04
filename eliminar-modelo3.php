@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/añadir-modificar-eliminar.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <link rel="icon" href="img/buyacar_89124.ico">
     <title>Eliminar modelo</title>
 </head>
@@ -29,7 +29,7 @@
         if($resultado->num_rows>0){
             // Sí hay vehículos
             ?>
-            <div class="mal">
+            <div class="container">
                 <h2 class="bg-danger rounded" style="padding:10px;">ERROR: No se ha podido eliminar el modelo escogido.</h2>
                 <p><a href="eliminar-vehiculo3.php?id=<?php echo $idmodelo;?>" class="btn btn-warning">Eliminar vehículos</a>
                 <a href="eliminar-modelo.php" class="btn btn-light">Volver</a></p>
@@ -45,9 +45,9 @@
             $sql1="DELETE FROM modelo WHERE ID_modelo='$idmodelo'";
             $resultado1=$mysqli->query($sql1);
             ?>
-            <div class="bien">
+            <div class="container">
                 <h2 class="bg-success rounded" style="padding:10px;">Modelo eliminado con éxito</h2>
-                <p class="bienb"><a href="admin.html" class="btn btn-primary" style="margin:10px;">Inicio</a><a href="eliminar-modelo.php" class="btn btn-warning">Volver</a></p>
+                <p><a href="admin.html" class="btn btn-primary" style="margin:10px;">Inicio</a><a href="eliminar-modelo.php" class="btn btn-warning">Volver</a></p>
             </div>
             <?php
         }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/añadir-modificar-eliminar.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <link rel="icon" href="img/buyacar_89124.ico">
     <title>Eliminar vehículo</title>
 </head>
@@ -26,9 +26,9 @@
         $sql="DELETE FROM vehiculos WHERE bastidor='$bastidor'";
         $resultado=$mysqli->query($sql);
         ?>
-        <div class="bien">
+        <div class="container">
             <h2 class="bg-success rounded" style="padding:10px;">Vehículo eliminado con exito</h2>
-            <p class="bienb"><a href="admin.html" class="btn btn-primary" style="margin:10px;">Inicio</a><a href="eliminar-vehiculo.php" class="btn btn-warning">Volver</a></p>
+            <p><a href="admin.html" class="btn btn-primary" style="margin:10px;">Inicio</a><a href="eliminar-vehiculo.php" class="btn btn-warning">Volver</a></p>
         </div>
         <?php
     } else {

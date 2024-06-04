@@ -22,7 +22,7 @@ if ($resultado->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/añadir-modificar-eliminar.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <link rel="icon" href="img/buyacar_89124.ico">
     <title>Eliminar vehículo</title>
 </head>
@@ -54,7 +54,6 @@ if ($resultado->num_rows > 0) {
         </table>
         <p><a href="admin.html" class="btn btn-warning" style="margin-top:10px;">Inicio</a></p>
     </div>
-
     <footer class="card text-center bg-info">
         <h5>INFO</h5>
         <p>Escoja la marca del modelo al que está asociado el vehículo que desea eliminar.</p>
