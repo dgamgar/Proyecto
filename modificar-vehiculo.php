@@ -22,7 +22,7 @@ if ($resultado->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/añadir-modificar-eliminar.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <link rel="icon" href="img/buyacar_89124.ico">
     <title>Modificar vehículo</title>
 </head>
@@ -35,12 +35,10 @@ if ($resultado->num_rows > 0) {
     if(!isset($_GET['id'])){
         ?>
         <div class="container">
-            <h2>Seleccione la marca a la que pertenece el vehículo</h2>
             <table id="tabla">
                 <thead>
-                    <tr>
-                        <th class="th">Marcas</th>
-                        <th></th>
+                    <tr class="bg-dark">
+                        <th style="color:white; padding:10px;">Marcas</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,17 +46,22 @@ if ($resultado->num_rows > 0) {
                         // Recorro todo el array mostrando las marcas que hay almacenadas
                         foreach ($marcas as $marca){
                             echo "<tr>";
-                            echo "<td class='td'>$marca</td>";
+                            echo "<td class='bg-light border-bottom' style='padding:10px;'>$marca</td>";
                             ?>
-                            <td><a href="modificar-vehiculo.php?id=<?php echo $marca;?>">Modelos</a></td>
+                            <td><a href="modificar-vehiculo.php?id=<?php echo $marca;?>" class="btn btn-primary">Modelos</a></td>
                             <?php
                             echo "</tr>";
                         }
                         ?>
                 </tbody>
             </table>
-            <p><a href="admin.html">Inicio</a></p>
+            <br>
+            <p><a href="admin.html" class="btn btn-warning">Inicio</a></p>
         </div>
+        <footer class="card text-center bg-info">
+            <h5>INFO</h5>
+            <p>Aquí debe escoger la marca del modelo al que está asociado el vehículo que desea modificar.</p>
+        </footer>
         <?php
     } else {
         // Guardo el nombre de la marca en una variable
@@ -83,36 +86,40 @@ if ($resultado->num_rows > 0) {
         <div class="container">
             <table id="tabla" class="display" >
                         <thead>
-                            <tr>
-                                <th class="th">Modelo</th>
-                                <th class="th">Número de puertas</th>
-                                <th class="th">Tipo de combustible</th>
-                                <th class="th">Potencia(CV)</th>
-                                <th></th>
+                            <tr class="bg-dark">
+                                <th style="color:white; padding:10px;">Modelo</th>
+                                <th style="color:white; padding:10px;">Número de puertas</th>
+                                <th style="color:white; padding:10px;">Tipo de combustible</th>
+                                <th style="color:white; padding:10px;">Potencia(CV)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                                 while($fila1 = $resultado1->fetch_assoc()){
                                     echo "<tr>";
-                                    echo "<td class='td'>$fila1[nombre_modelo]</td>";
-                                    echo "<td class='td'>$fila1[num_puertas]</td>";
-                                    echo "<td class='td'>$fila1[combustible]</td>";
-                                    echo "<td class='td'>$fila1[cv]</td>";
+                                    echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila1[nombre_modelo]</td>";
+                                    echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila1[num_puertas]</td>";
+                                    echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila1[combustible]</td>";
+                                    echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila1[cv]</td>";
                                     ?>
                                     <!-- Guardo el ID del modelo escogido para llevarlo a la otra página-->
-                                    <td><a href="modificar-vehiculo2.php?id=<?php echo $fila1['ID_modelo'];?>">Vehículos</a></td>
+                                    <td><a href="modificar-vehiculo2.php?id=<?php echo $fila1['ID_modelo'];?>" class="btn btn-primary">Vehículos</a></td>
                                     <?php
                                     echo "</tr>";
                                 }
                             ?>
                         </tbody>
             </table>
-            <p><a href="modificar-vehiculo.php">Volver</a></p>
+            <br>
+            <p><a href="modificar-vehiculo.php" class="btn btn-warning">Volver</a></p>
         </div>
+        <footer class="card fixed-bottom text-center bg-info">
+            <h5>INFO</h5>
+            <p>Escoja el modelo al que está asociado el vehículo que desea modificar.</p>
+        </footer>
         <?php
-        
     }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

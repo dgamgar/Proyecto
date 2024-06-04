@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/añadir-modificar-eliminar.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <link rel="icon" href="img/buyacar_89124.ico">
     <title>Modificar vehículo</title>
 </head>
@@ -34,45 +34,55 @@
                 <!-- Tabla mostrando los datos de todos los vehículos del modelo escogido -->
                 <table id="tabla" class="display" >
                             <thead>
-                                <tr>
-                                    <th class="th">Número de bastidor</th>
-                                    <th class="th">Color</th>
-                                    <th class="th">Pack Estética</th>
-                                    <th class="th">Precio(€)</th>
-                                    <th></th>
+                                <tr class="bg-dark">
+                                    <th style="color:white; padding:10px;">Número de bastidor</th>
+                                    <th style="color:white; padding:10px;">Color</th>
+                                    <th style="color:white; padding:10px;">Pack Estética</th>
+                                    <th style="color:white; padding:10px;">Precio(€)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                     while($fila = $resultado->fetch_assoc()){                                
                                         echo "<tr>";
-                                        echo "<td class='td'>$fila[bastidor]</td>";
-                                        echo "<td class='td'>$fila[color]</td>";
-                                        echo "<td class='td'>$fila[paquete]</td>";
-                                        echo "<td class='td'>$fila[precio]</td>";
+                                        echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila[bastidor]</td>";
+                                        echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila[color]</td>";
+                                        echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila[paquete]</td>";
+                                        echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila[precio]</td>";
                                         ?>
-                                        <td><a href="modificar-vehiculo3.php?id=<?php echo $fila["bastidor"];?>">Modificar</a></td>
+                                        <td><a href="modificar-vehiculo3.php?id=<?php echo $fila["bastidor"];?>" class="btn btn-primary">Modificar</a></td>
                                         <?php
                                         echo "</tr>";
                                     }
                                 ?>
                             </tbody>
                 </table>
-                <p><a href="modificar-vehiculo.php">Volver</a></p>
+                <br>
+                <p><a href="modificar-vehiculo.php" class="btn btn-warning">Volver</a></p>
             </div>
             <?php
         } else {
             // No hay
             ?>
-            <div class="mal">
-                <h2 class="malt">No existen vehículos de el modelo seleccionado, inténtelo de nuevo</h2>
-                <p class="malb"><a href="admin.html">Volver</a></p>
+            <div class="container">
+                <h2 class="bg-danger rounded" style="padding:10px;">ERROR: No hay vehículos</h2>
+                <p><a href="admin.html" class="btn btn-warning">Volver</a></p>
             </div>
+            <footer class="card fixed-bottom text-center bg-info">
+                <h5>INFO</h5>
+                <p>No tenemos vehículos asociados al modelo seleccionado, inténtelo de nuevo con otro modelo.</p>
+            </footer>
             <?php
         }
     } else {
-        echo "No se lo ha traído";
+        ?>
+        <div class="container">
+            <h1><strong>500</strong></h1>
+            <h2>Internal Server Error</h2>
+        </div>
+        <?php
     }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
