@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <div class="card text-center shadow-lg">
-            <div class="card-header bg-info">
+            <div class="card-header bg-transparent">
                 <div class="row">
                     <div class="col d-flex justify-content-start">
                         <h1 style="margin-top: 15px;">Bienvenido</h1>
@@ -42,9 +42,9 @@
 
                 <p>¡Te damos la bienvenida a la familia DanCar Autos!</p>
             </div>
-            <div class="card-footer d-flex flex-row justify-content-center bg-info">
-                <p style="margin:10px;"><a href="registrar.html" class="btn btn-light">Registrarse</a></p>
-                <p style="margin:10px;"><a href="login.html" class="btn btn-light">Iniciar sesión</a></p>
+            <div class="card-footer d-flex flex-row justify-content-center">
+                <p style="margin:10px;"><a href="registrar.html" class="btn btn-primary">Registrarse</a></p>
+                <p style="margin:10px;"><a href="login.html" class="btn btn-primary">Iniciar sesión</a></p>
             </div>
         </div>
     </div>

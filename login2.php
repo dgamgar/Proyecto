@@ -7,7 +7,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/login2.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <link rel="icon" href="img/buyacar_89124.ico">
     <title>Login</title>
 </head>
@@ -46,60 +46,35 @@ session_start();
                 }
             }else{
                 ?>
-                <h2>Contraseña incorrecta</h2>
-                <p class="btn2"><a href="login.html">Volver</a></p>
-                <footer>
-                    <div class="rrss">
-                        <div class="rrss-item">
-                            <img src="img/telefono.png" class="ico"><p>645868195</p>
+                <div class="container" style="margin-top:120px;">
+                    <div class="card rounded shadow-lg">
+                        <div class="card-body bg-danger d-flex justify-content-center">
+                            <h5>La contraseña introducida es incorrecta, inténtelo de nuevo.</h5>
                         </div>
-                        <div class="rrss-item">
-                            <img src="img/gmail.png" class="ico"><p>dancarautos@gmail.com</p>
-                        </div>
-                        <div class="rrss-item">
-                            <img src="img/instagram.png" class="ico"><p>@dancar_autos</p>
+                        <div class="card-footer d-flex justify-content-center">
+                            <p><a href="login.html" class="btn btn-primary">Volver</a></p>
                         </div>
                     </div>
-                    <div class="copy">
-                        <div class="copy-item">
-                            <img src="img/copy.png" class="icopy">
-                        </div>
-                        <div class="copy-item">
-                            <p> 2024 DanCar Autos SL. ALL RIGHTS RESERVED.</p>
-                        </div>
-                    </div>
-                </footer>
+                </div>
             <?php
             }
 
         } else {
             // No existe
             ?>
-            <h2>Los datos introducidos no corresponden con ningún cliente, inténtelo de nuevo.</h2>
-            <p><a href="login.html">Volver</a><a href="registrar.html">Registrarse</a></p>
-            <footer>
-                <div class="rrss">
-                    <div class="rrss-item">
-                        <img src="img/telefono.png" class="ico"><p>645868195</p>
+            <div class="container" style="margin-top:120px;">
+                <div class="card rounded shadow-lg">
+                    <div class="card-body bg-danger">
+                        <h5>Los datos introducidos no corresponden con ningún cliente, inténtelo de nuevo.</h5>
                     </div>
-                    <div class="rrss-item">
-                        <img src="img/gmail.png" class="ico"><p>dancarautos@gmail.com</p>
-                    </div>
-                    <div class="rrss-item">
-                        <img src="img/instagram.png" class="ico"><p>@dancar_autos</p>
+                    <div class="card-footer d-flex justify-content-center">
+                        <p><a href="login.html" class="btn btn-primary">Volver</a></p>
                     </div>
                 </div>
-                <div class="copy">
-                    <div class="copy-item">
-                        <img src="img/copy.png" class="icopy">
-                    </div>
-                    <div class="copy-item">
-                        <p> 2024 DanCar Autos SL. ALL RIGHTS RESERVED.</p>
-                    </div>
-                </div>
-            </footer>
+            </div>
             <?php
         }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
