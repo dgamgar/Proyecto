@@ -67,9 +67,9 @@
         } else {
             // No hay
             ?>
-            <div class="mal">
+            <div class="container">
                 <h2 class="bg-danger rounded" style="padding:10px;">ERROR: No hay vehículos asociados</h2>
-                <p class="malb"><a href="admin.html" class="btn btn-primary" style="margin:10px;">Inicio</a><a href="eliminar-vehiculo.php" class="btn btn-warning">Volver</a></p>
+                <p><a href="admin.html" class="btn btn-primary" style="margin:10px;">Inicio</a><a href="eliminar-vehiculo.php" class="btn btn-warning">Volver</a></p>
             </div>
             <footer class="card fixed-bottom text-center bg-info">
                 <h5>INFO</h5>

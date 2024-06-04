@@ -1,0 +1,27 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('../img/fondo.jpg');
+    background-size: cover;
+}
+
+header{
+    background-color:rgb(23, 230, 230);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.logo{
+    max-width:200px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
