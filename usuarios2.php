@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <link rel="icon" href="img/buyacar_89124.ico">
     <title>Usuarios</title>
 </head>
@@ -35,19 +35,24 @@
 
     if($resultado>0){
         ?>
-        <div class="bien">
-            <h2 class="bient">Usuario modificado</h2>
-            <p><a href="admin.html">Volver</a></p>
+        <div class="container">
+            <h2 class="bg-success rounded" style="padding:10px;">Usuario modificado</h2>
+            <p><a href="admin.html" class="btn btn-warning">Volver</a></p>
         </div>
         <?php
     }else{
         ?>
-        <div class="mal">
-            <h2 class="malt">Ha ocurrido un error, inténtelo de nuevo</h2>
-            <p><a href="admin.html">Volver</a></p>
+        <div class="container">
+            <h2 class="bg-danger rounded" style="padding:10px;">ERROR: No se ha podido modificar</h2>
+            <p><a href="admin.html" class="btn btn-warning">Volver</a></p>
         </div>
+        <footer class="card fixed-bottom text-center bg-info">
+            <h5>INFO</h5>
+            <p>No se han podido actualizar los datos introducidos para el usuario, inténtelo de nuevo.</p>
+        </footer>
         <?php
     }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
