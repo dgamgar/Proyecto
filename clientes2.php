@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/buyacar_89124.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/clientes.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <title>Compras</title>
 </head>
 <body>
@@ -33,12 +33,12 @@
             <!-- Tabla mostrando compras -->
             <table>
                 <thead>
-                    <tr>
-                        <th class="th">Marca</th>
-                        <th class="th">Modelo</th>
-                        <th class="th">Bastidor</th>
-                        <th class="th">Precio(€)</th>
-                        <th class="th">Fecha de compra</th>
+                    <tr class="bg-dark">
+                        <th style="color:white; padding:10px;">Marca</th>
+                        <th style="color:white; padding:10px;">Modelo</th>
+                        <th style="color:white; padding:10px;">Bastidor</th>
+                        <th style="color:white; padding:10px;">Precio(€)</th>
+                        <th style="color:white; padding:10px;">Fecha de compra</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,50 +60,38 @@
                             $resultado2=$mysqli->query($sql2);
                     
                             while($fila2 = $resultado2->fetch_assoc()){
-                                echo "<td class='td'>$fila2[nombre_marca]</td>";
+                                echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila2[nombre_marca]</td>";
                             }
                     
-                            echo "<td class='td'>$fila1[nombre_modelo]</td>";
+                            echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila1[nombre_modelo]</td>";
                         }
                     
-                        echo "<td class='td'>$fila[bastidor]</td>";
-                        echo "<td class='td'>$fila[precio]</td>";
-                        echo "<td class='td'>$fila[fecha]</td>";
+                        echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila[bastidor]</td>";
+                        echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila[precio]</td>";
+                        echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila[fecha]</td>";
                         echo "</tr>";
                     }
                     ?>
             </table>
-            <p><a href="clientes.html">Volver</a></p>
+            <br>
+            <p><a href="clientes.html" class="btn btn-warning">Volver</a></p>
             <?php
 
         } else {
             ?>
-            <h2>Todavía no ha realizado ninguna compra</h2>
-            <p><a href="clientes.html">Volver</a><a href="marca.php">Ir a comprar</a></p>
+            <div class="card rounded shadow-lg">
+                <div class="card-body bg-danger">
+                    <h5>Todavía no ha realizado ninguna compra</h5>
+                </div>
+                <div class="card-footer">
+                    <p class="d-flex justify-content-evenly"><a href="clientes.html" class="btn btn-warning">Volver</a><a href="marca.php" class="btn btn-primary">Ir a comprar</a></p>
+                </div>
+            </div>
             <?php
         }
         ?>
     </div>
-    <footer>
-        <div class="rrss">
-            <div class="rrss-item">
-                <img src="img/telefono.png" class="ico"><p>645868195</p>
-            </div>
-            <div class="rrss-item">
-                <img src="img/gmail.png" class="ico"><p>dancarautos@gmail.com</p>
-            </div>
-            <div class="rrss-item">
-                <img src="img/instagram.png" class="ico"><p>@dancar_autos</p>
-            </div>
-        </div>
-        <div class="copy">
-            <div class="copy-item">
-                <img src="img/copy.png" class="icopy">
-            </div>
-            <div class="copy-item">
-                <p> 2024 DanCar Autos SL. ALL RIGHTS RESERVED.</p>
-            </div>
-        </div>
-    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
