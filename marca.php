@@ -46,7 +46,7 @@ if ($resultado->num_rows > 0) {
                 <br>
         <p><a href="clientes.html" class="btn btn-warning">Volver</a></p>
     </div>
-    <footer class="bg-info">
+    <footer>
         <div class="row">
             <p>Contáctanos</p>
             <span>------------------------------</span>

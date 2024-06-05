@@ -53,10 +53,10 @@ $resultado1=$mysqli->query($sql1);
 					<?php
 						while($fila1 = $resultado1->fetch_assoc()){
 							echo "<tr>";
-							echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila1[nombre_modelo]</td>";
-							echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila1[num_puertas]</td>";
-							echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila1[combustible]</td>";
-							echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila1[cv]</td>";
+							echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila1[nombre_modelo]</td>";
+							echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila1[num_puertas]</td>";
+							echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila1[combustible]</td>";
+							echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila1[cv]</td>";
 							?>
 							<!-- Guardo el ID del modelo escogido para llevarlo a la otra página-->
 							<td><a href="vehiculo.php?id=<?php echo $fila1['ID_modelo'];?>" class="btn btn-primary">Ver vehículos disponibles</a></td>
