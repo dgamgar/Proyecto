@@ -13,11 +13,9 @@
         <div class="card text-center shadow-lg">
             <div class="card-header bg-transparent">
                 <div class="row">
-                    <div class="col d-flex justify-content-start">
-                        <h1 style="margin-top: 15px;">Bienvenido</h1>
-                    </div>
-                    <div class="col d-flex justify-content-end">
-                        <img src="img/logo2.png" class="logo">
+                    <div class="col d-flex justify-content-center">
+                        <p><h1 style="margin-top: 15px;">Bienvenido a </h1>
+                        <img src="img/logo2.png" class="logo"></p>
                     </div>
                 </div>
             </div>
