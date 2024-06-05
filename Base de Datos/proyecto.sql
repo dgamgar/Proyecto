@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-05-2024 a las 09:17:02
+-- Tiempo de generación: 05-06-2024 a las 11:10:07
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -37,14 +37,14 @@ CREATE TABLE `marca` (
 --
 
 INSERT INTO `marca` (`ID_marca`, `nombre_marca`) VALUES
-(1, 'audi'),
-(2, 'bmw'),
-(3, 'mercedes'),
-(4, 'volkswagen'),
-(5, 'seat'),
-(13, 'toyota'),
+(1, 'Audi'),
+(2, 'BMW'),
+(3, 'Mercedes'),
+(4, 'Volkswagen'),
+(5, 'Seat'),
+(13, 'Toyota'),
 (14, 'skoda'),
-(16, 'peugeot');
+(16, 'Peugeot');
 
 -- --------------------------------------------------------
 
@@ -71,10 +71,10 @@ INSERT INTO `modelo` (`ID_modelo`, `ID_marca`, `nombre_modelo`, `num_puertas`, `
 (3, 3, 'S450', '5', 'Gasolina', '290'),
 (4, 4, 'Golf', '3', 'Diesel', '90'),
 (5, 5, 'leon', '5', 'Gasolina', '115'),
-(6, 1, 'Q8', '5', 'Híbrido', '280'),
-(11, 1, 'A7', '4', 'Gasolina', '260'),
 (13, 1, 'Q4', '5', 'Eléctrico', '180'),
-(14, 1, 'Q3', '5', 'diesel', '150');
+(18, 13, 'yaris', '5', 'Híbrido', '95'),
+(19, 14, 'Superb', '4', 'Diesel', '150'),
+(26, 5, 'Ibiza', '5', 'Diesel', '95');
 
 -- --------------------------------------------------------
 
@@ -86,19 +86,22 @@ CREATE TABLE `transacciones` (
   `ID_transaccion` int(11) NOT NULL,
   `bastidor` int(11) NOT NULL,
   `fecha` date NOT NULL,
-  `id_comprador` int(11) DEFAULT NULL
+  `id_comprador` int(11) DEFAULT NULL,
+  `id_modelo` int(11) DEFAULT NULL,
+  `precio` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `transacciones`
 --
 
-INSERT INTO `transacciones` (`ID_transaccion`, `bastidor`, `fecha`, `id_comprador`) VALUES
-(16, 928374, '2024-04-15', 34),
-(18, 2147483647, '2024-04-17', 34),
-(20, 46789132, '2024-04-17', 33),
-(22, 5675878, '2024-04-17', 33),
-(38, 66666666, '2024-04-18', 34);
+INSERT INTO `transacciones` (`ID_transaccion`, `bastidor`, `fecha`, `id_comprador`, `id_modelo`, `precio`) VALUES
+(43, 123456789, '2024-05-24', 44, 19, 12700),
+(49, 1111111, '2024-05-24', 45, 13, 37500),
+(50, 9999999, '2024-05-24', 45, 1, 14000),
+(51, 123987456, '2024-05-24', 44, 3, 94850),
+(56, 1111122222, '2024-06-05', 47, 26, 10000),
+(57, 2147483647, '2024-06-05', 47, 26, 10000);
 
 -- --------------------------------------------------------
 
@@ -120,10 +123,11 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`ID_usu`, `Rol`, `Nombre`, `fecha_nac`, `contraseña`, `dni`) VALUES
-(32, 1, 'antonio', '2002-02-02', '12345', '87654321B'),
-(33, 0, 'pepe', '0200-01-01', '12345', '12345678A'),
-(34, 0, 'daniel', '2003-10-25', '12345', '3456782E'),
-(39, 0, 'juan', '2003-07-04', '12345', '324676658P');
+(43, 1, 'jesus', '2003-10-25', '$2y$10$VgdIwNNh6D1aanJvnb8REev4B439Upto37QzRugiYtTQptOKYKlp2', '12345678A'),
+(44, 0, 'daniel', '2002-06-25', '$2y$10$X64G9PpYoFhy6ii7g5BFOOkOirkF.NhBBUIJtgjuCxrfGt/wEY536', '65478912L'),
+(45, 0, 'jose luis', '1911-11-11', '$2y$10$JqqKhQaIDU12nAby02cT6.QbGSlKT1u3uWBXt6AQz9ci2FIu18w3u', '64598257J'),
+(46, 0, 'juanito', '2024-06-21', '$2y$10$pFTT7KCsbqWu.6w.6aT62.WoHVLUJs07fWdf8OHDTlBBB8Wvj7.E2', '3456782E'),
+(47, 0, 'Miriam', '2003-07-22', '$2y$10$XCuFo66yrpXpoiGOcYOLvOAF4UZpbs/Y3k5.yc4.l6GcoxXySXepC', '26032022D');
 
 -- --------------------------------------------------------
 
@@ -139,13 +143,6 @@ CREATE TABLE `vehiculos` (
   `paquete` varchar(50) NOT NULL,
   `precio` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `vehiculos`
---
-
-INSERT INTO `vehiculos` (`bastidor`, `ID_marca`, `ID_modelo`, `color`, `paquete`, `precio`) VALUES
-(45678, 3, 3, 'Blanco', 'AMG', 235000);
 
 --
 -- Índices para tablas volcadas
@@ -191,25 +188,25 @@ ALTER TABLE `vehiculos`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `ID_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `ID_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de la tabla `modelo`
 --
 ALTER TABLE `modelo`
-  MODIFY `ID_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `transacciones`
 --
 ALTER TABLE `transacciones`
-  MODIFY `ID_transaccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `ID_transaccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `ID_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- Restricciones para tablas volcadas
