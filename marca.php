@@ -48,7 +48,7 @@ if ($resultado->num_rows > 0) {
     </div>
     <footer>
         <div class="row">
-            <p>Contáctanos</p>
+            <h5>Contáctanos</h5>
             <span>------------------------------</span>
             <div class="row">
                 <div class="col-sm-2">

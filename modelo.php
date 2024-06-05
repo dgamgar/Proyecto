@@ -91,7 +91,7 @@ $resultado1=$mysqli->query($sql1);
 
 	<footer class="fixed-bottom">
         <div class="row">
-            <p>Contáctanos</p>
+			<h5>Contáctanos</h5>
             <span>------------------------------</span>
             <div class="row">
                 <div class="col-sm-2">
