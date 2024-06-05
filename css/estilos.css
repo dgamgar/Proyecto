@@ -27,6 +27,10 @@ header{
     margin-top: 30px;
 }
 
+table{
+    text-transform: capitalize;
+}
+
 footer{
     padding:20px;
     background-color:rgb(23, 230, 230);
