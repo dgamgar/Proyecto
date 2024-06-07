@@ -43,7 +43,8 @@ session_start();
                     <label for="marca1">Nuevo nombre: </label>
                     <input type="text" name="marca1" id="marca1">
                 </div>
-                <div class="btn-mod">
+                <br>
+                <div class="d-flex justify-content-center">
                     <input type="submit" value="Modificar" class="btn btn-success">
                 </div>
             </form>

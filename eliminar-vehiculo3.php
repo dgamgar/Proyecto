@@ -57,6 +57,7 @@
                                 ?>
                             </tbody>
                 </table>
+                <br>
                 <p><a href="eliminar-vehiculo.php" class="btn btn-warning">Volver</a></p>
             </div>
             <footer class="card fixed-bottom text-center bg-info">

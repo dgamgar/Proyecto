@@ -41,14 +41,14 @@
                         while($fila = $resultado->fetch_assoc()){
                             $rol=$fila["Rol"];
                             echo "<tr>";
-                            echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila[dni]</td>";
-                            echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila[Nombre]</td>";
-                            echo "<td class='bg-light border-bottom' style='padding:10px;'>$fila[fecha_nac]</td>";
+                            echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila[dni]</td>";
+                            echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila[Nombre]</td>";
+                            echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>$fila[fecha_nac]</td>";
                             // Muestro el tipo de usuario
                             if($rol>0){
-                                echo "<td class='bg-light border-bottom' style='padding:10px;'>Administrador</td>";
+                                echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>Administrador</td>";
                             } else {
-                                echo "<td class='bg-light border-bottom' style='padding:10px;'>Standard(comprador)</td>";
+                                echo "<td class='bg-light border-bottom border-start' style='padding:10px;'>Standard(comprador)</td>";
                             }
                             ?>
                             <!-- Boton para ir a editar el usuario -->
@@ -59,9 +59,10 @@
                     ?>
                 </tbody>
             </table>
+            <br>
             <p><a href="admin.html" class="btn btn-warning">Volver</a></p>
         </div>
-        <footer class="card fixed-bottom text-center bg-info">
+        <footer class="card text-center bg-info">
             <h5>INFO</h5>
             <p>Aquí puede ver los datos de los usuarios registrados y acceder a editarlos.</p>
         </footer>
