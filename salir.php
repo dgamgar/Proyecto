@@ -9,7 +9,7 @@
 <body>
     <?php
     session_destroy();
-    header("Location:inicio.php");
+    header("Location:index.php");
     ?>
 </body>
 </html>
